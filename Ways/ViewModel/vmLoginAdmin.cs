@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ways.Model
+namespace Ways.ViewModel
 {
-    public partial class Question
+    class vmLoginAdmin
     {
-        public int IdQuestion { get; set; }
-        public string 
     }
 }

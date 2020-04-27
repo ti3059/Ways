@@ -36,7 +36,7 @@ namespace Ways.View
             }
             else
             {
-                Console.WriteLine(" non Ok");
+                lblError.Visibility = Visibility;
             }
         }
     }

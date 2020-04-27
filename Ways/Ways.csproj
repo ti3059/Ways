@@ -74,6 +74,9 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\Candidate.cs" />
     <Compile Include="Model\Question.cs" />
+    <Compile Include="ViewModel\vmChoiceMenuAdmin.cs" />
+    <Compile Include="ViewModel\vmLoginAdmin.cs" />
+    <Compile Include="ViewModel\vmStart.cs" />
     <Compile Include="View\wChoiceMenuAdmin.xaml.cs">
       <DependentUpon>wChoiceMenuAdmin.xaml</DependentUpon>
     </Compile>
