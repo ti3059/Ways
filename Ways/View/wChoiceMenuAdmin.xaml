@@ -1,0 +1,27 @@
+﻿<Window x:Class="Ways.View.wChoiceMenuAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ways.View"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Title="wChoiceMenuAdmin" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Rectangle Height="469" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#8bf5bf"></GradientStop>
+                        <GradientStop Color="#27748d" Offset="1"></GradientStop>
+                        <GradientStop Color="#4bb2bd" Offset="0.5"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="#27748d" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
+            <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="#27748d" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>
