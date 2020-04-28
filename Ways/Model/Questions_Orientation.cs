@@ -29,9 +29,9 @@ namespace Ways.Model
             try
             {
                 s.connection.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO questions_orientation(question) VALUES(@person)", s.connection);
-                command.Parameters.AddWithValue("@person", "Myname");
-                command.Parameters.AddWithValue("@address", "Myaddress");
+                MySqlCommand command = new MySqlCommand("INSERT INTO questions_orientation(question) VALUES(@question)", s.connection);
+                //command.Parameters.AddWithValue("@person", "Myname");
+                //command.Parameters.AddWithValue("@address", "Myaddress");
                 command.ExecuteNonQuery();
             }
             catch

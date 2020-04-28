@@ -60,7 +60,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\wGameAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\wLoginAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\wOrientationAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -83,8 +91,14 @@
     <Compile Include="View\wChoiceMenuAdmin.xaml.cs">
       <DependentUpon>wChoiceMenuAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\wGameAdmin.xaml.cs">
+      <DependentUpon>wGameAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wLoginAdmin.xaml.cs">
       <DependentUpon>wLoginAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wOrientationAdmin.xaml.cs">
+      <DependentUpon>wOrientationAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wStart.xaml.cs">
       <DependentUpon>wStart.xaml</DependentUpon>
