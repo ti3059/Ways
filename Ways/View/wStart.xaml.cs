@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Ways
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace Ways
         public MainWindow()
         {
             InitializeComponent();
-           
+            ViewModel.vmStart.getQuestionsGame();
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
