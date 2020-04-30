@@ -25,6 +25,8 @@ namespace Ways
         {
             InitializeComponent();
             ViewModel.vmStart.getQuestionsGame();
+            Model.Job j = new Model.Job();
+            j.AddJobToDict(j.Dict_Jobs_Orientation);
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
