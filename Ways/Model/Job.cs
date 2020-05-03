@@ -15,6 +15,7 @@ namespace Ways.Model
 
         }
 
+
         public void AddJobToDict(Dictionary<string, int> dict)
         {
             Dict_Jobs_Orientation.Add("Développeur", 0);
