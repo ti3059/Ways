@@ -22,6 +22,7 @@ namespace Ways.View
         public wOrientationAdmin()
         {
             InitializeComponent();
+
         }
     }
 }

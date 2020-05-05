@@ -18,7 +18,7 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <ListView HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="377">
+            <ListView  HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="377">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn/>

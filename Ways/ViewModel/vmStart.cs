@@ -19,8 +19,6 @@ namespace Ways.ViewModel
         {
             List<Job> lstJobs = new List<Job>();
             Model.Job.AddJob(lstJobs);
-        }
-
-    
+        }   
     }
 }
