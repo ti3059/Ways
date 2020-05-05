@@ -11,15 +11,18 @@ namespace Ways.Model
         private string name;
         private string des;
         private List<string> tasks;
-        private List<string> skills;
         private int countValue = 0;
 
-        public Job(string JobName, string JobDes, List<string> JobTasks, List<string> JobSkills, int value)
+        public Job(string JobName, string JobDes, List<string> JobTasks, int value)
         {
             Name = JobName;
             Des = JobDes;
             Tasks = JobTasks;
             value = countValue;
+        }
+        public Job()
+        {
+
         }
 
         public string Name { get => name; set => name = value; }

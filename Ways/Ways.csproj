@@ -86,6 +86,7 @@
     <Compile Include="Model\Questions_Game.cs" />
     <Compile Include="Model\Questions_Orientation.cs" />
     <Compile Include="Model\Server.cs" />
+    <Compile Include="Model\Skill.cs" />
     <Compile Include="ViewModel\vmChoiceMenuAdmin.cs" />
     <Compile Include="ViewModel\vmLoginAdmin.cs" />
     <Compile Include="ViewModel\vmStart.cs" />

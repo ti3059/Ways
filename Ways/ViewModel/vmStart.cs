@@ -17,8 +17,14 @@ namespace Ways.ViewModel
 
         public static void getJobs()
         {
-            List<Job> lstJobs = new List<Job>();
-            Model.Job.AddJob(lstJobs);
-        }   
+            Job job = new Job();
+            List<Job> lstJobs = job.SelectJobs();
+        }
+
+        public static void getSkills()
+        {
+            Skill skill = new Skill();
+            List<Skill> lstSkills = skill.SelectSkills(getJobs());
+        }
     }
 }
