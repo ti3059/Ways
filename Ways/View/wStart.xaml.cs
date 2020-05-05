@@ -25,6 +25,7 @@ namespace Ways
         {
             InitializeComponent();
             ViewModel.vmStart.getQuestionsGame();
+            ViewModel.vmStart.getJobs();
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
