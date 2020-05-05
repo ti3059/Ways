@@ -25,8 +25,6 @@ namespace Ways
         {
             InitializeComponent();
             ViewModel.vmStart.getQuestionsGame();
-            List<Job> lstJobs = new List<Job>();
-            Model.Job.AddJob(lstJobs);
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)

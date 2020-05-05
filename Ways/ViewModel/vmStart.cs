@@ -15,6 +15,12 @@ namespace Ways.ViewModel
             List<Questions_Game> lstQustionsGames = game.SelectQuestionsGame();
         }
 
+        public static void getJobs()
+        {
+            List<Job> lstJobs = new List<Job>();
+            Model.Job.AddJob(lstJobs);
+        }
+
     
     }
 }
