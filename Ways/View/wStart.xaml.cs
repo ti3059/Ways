@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Ways.Model;
 
 namespace Ways
 {
@@ -25,8 +25,8 @@ namespace Ways
         {
             InitializeComponent();
             ViewModel.vmStart.getQuestionsGame();
-            Model.Job j = new Model.Job();
-            j.AddJobToDict(j.Dict_Jobs_Orientation);
+            List<Job> lstJobs = new List<Job>();
+            Model.Job.AddJob(lstJobs);
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
