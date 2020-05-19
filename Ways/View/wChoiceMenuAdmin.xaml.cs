@@ -26,7 +26,10 @@ namespace Ways.View
 
         private void btnGameManage_Click(object sender, RoutedEventArgs e)
         {
-
+            wGameAdmin wGameAdmin = new wGameAdmin();
+            wGameAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            wGameAdmin.Show();
+            this.Close();
         }
 
         private void btnOrientationManage_Click(object sender, RoutedEventArgs e)

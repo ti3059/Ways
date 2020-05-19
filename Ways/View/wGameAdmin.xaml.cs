@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ways.Model;
+using Ways.ViewModel;
 
 namespace Ways.View
 {
@@ -22,6 +24,15 @@ namespace Ways.View
         public wGameAdmin()
         {
             InitializeComponent();
+            addQuestionToListView();
+        }
+
+        public void addQuestionToListView()
+        {
+            foreach(Questions_Game q in vmStart.lstQustionsGames)
+            {
+                lvGameAdmin.Items.Add(q);
+            }
         }
     }
 }

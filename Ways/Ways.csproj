@@ -88,6 +88,7 @@
     <Compile Include="Model\Server.cs" />
     <Compile Include="Model\Skill.cs" />
     <Compile Include="ViewModel\vmChoiceMenuAdmin.cs" />
+    <Compile Include="ViewModel\vmGameAdmin.cs" />
     <Compile Include="ViewModel\vmLoginAdmin.cs" />
     <Compile Include="ViewModel\vmStart.cs" />
     <Compile Include="View\wChoiceMenuAdmin.xaml.cs">

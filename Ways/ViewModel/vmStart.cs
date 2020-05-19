@@ -9,10 +9,11 @@ namespace Ways.ViewModel
 {
     class vmStart
     {
+        public static List<Questions_Game> lstQustionsGames = new List<Questions_Game>();
         public static void getQuestionsGame()
         {
             Questions_Game game = new Questions_Game();
-            List<Questions_Game> lstQustionsGames = game.SelectQuestionsGame();
+            lstQustionsGames = game.SelectQuestionsGame();
         }
 
         public static void getJobs()
