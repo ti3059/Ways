@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Ways.View
 {
     /// <summary>
-    /// Logique d'interaction pour wEditQuestion.xaml
+    /// Logique d'interaction pour wForm.xaml
     /// </summary>
-    public partial class wEditQuestion : Window
+    public partial class wForm : Window
     {
-        public wEditQuestion()
+        public wForm()
         {
             InitializeComponent();
         }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ways.View"
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen"
-        Title="Question : Editer" Height="450" Width="800">
+        Title="Question n°" Height="450" Width="800">
     <Grid>
         <Grid>
             <Rectangle Height="469" VerticalAlignment="Top">
@@ -22,25 +22,24 @@
             <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2">
                 <Grid HorizontalAlignment="Left" Height="71" Margin="10,55,0,0" VerticalAlignment="Top" Width="747">
                     <Label x:Name="lQuestion" Content="Question n :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                    <TextBox x:Name="tbQuestion" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="727"/>
+                    <TextBlock x:Name="lQuestionSubject" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Sujet de la question" VerticalAlignment="Top" Width="727" Height="20" Foreground="White" FontSize="14"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="161" Margin="10,160,0,0" VerticalAlignment="Top" Width="747">
                     <Grid HorizontalAlignment="Left" Height="71" Margin="375,10,0,0" VerticalAlignment="Top" Width="362">
-                        <Label Content="Réponse 2 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBox x:Name="tbAnswerTwo" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+                        <Button x:Name="lAnswerTwo" Content="Réponse 2" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="344" BorderBrush="White" Foreground="White" Background="#00DDDDDD" Height="51"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="375,81,0,0" VerticalAlignment="Top" Width="362">
-                        <Label Content="Réponse 4 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBox x:Name="tbAnswerFour" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+                        <Button x:Name="lAnswerFour" Content="Réponse 4" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="344" BorderBrush="White" Foreground="White" Background="#00DDDDDD" Height="51"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,81,0,0" VerticalAlignment="Top" Width="360">
-                        <Label Content="Réponse 3 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBox x:Name="tbAnswerThree" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
+                        <Button x:Name="lAnswerThree" Content="Réponse 3" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="344" BorderBrush="White" Foreground="White" Background="#00DDDDDD" Height="51"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="360">
-                        <Label Content="Réponse 1 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBox x:Name="tbAnswerOne" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
+                        <Button x:Name="lAnswerOne" Content="Réponse 1" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="344" BorderBrush="White" Foreground="White" Background="#00DDDDDD" Height="51"/>
                     </Grid>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="52" Margin="10,332,0,0" VerticalAlignment="Top" Width="747">
+                    <TextBlock x:Name="lActualTotal" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="n/x" VerticalAlignment="Top" Width="727" Height="32" Foreground="White" FontSize="20" TextAlignment="Center"/>
                 </Grid>
             </Grid>
             <!--
@@ -48,6 +47,5 @@
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
             -->
         </Grid>
-        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White"/>
     </Grid>
 </Window>

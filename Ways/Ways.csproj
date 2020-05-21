@@ -56,7 +56,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\wAdminQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wForm - Copier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wTestMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wEditRightAnswer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wEditJobAnswer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\wEditQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wLoginCandidate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\wQuestion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -95,8 +127,32 @@
     <Compile Include="ViewModel\vmGameAdmin.cs" />
     <Compile Include="ViewModel\vmLoginAdmin.cs" />
     <Compile Include="ViewModel\vmStart.cs" />
+    <Compile Include="View\wAdminQuestion.xaml.cs">
+      <DependentUpon>wAdminQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wForm - Copier.xaml.cs">
+      <DependentUpon>wForm - Copier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wForm.xaml.cs">
+      <DependentUpon>wForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wTestMenu.xaml.cs">
+      <DependentUpon>wTestMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wEditRightAnswer.xaml.cs">
+      <DependentUpon>wEditRightAnswer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wEditJobAnswer.xaml.cs">
+      <DependentUpon>wEditJobAnswer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wEditQuestion.xaml.cs">
       <DependentUpon>wEditQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wLoginCandidate.xaml.cs">
+      <DependentUpon>wLoginCandidate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wQuestion.xaml.cs">
+      <DependentUpon>wQuestion.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wChoiceMenuAdmin.xaml.cs">
       <DependentUpon>wChoiceMenuAdmin.xaml</DependentUpon>
@@ -140,6 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
