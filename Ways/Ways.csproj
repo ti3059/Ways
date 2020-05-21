@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\wEditQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\wChoiceMenuAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +95,9 @@
     <Compile Include="ViewModel\vmGameAdmin.cs" />
     <Compile Include="ViewModel\vmLoginAdmin.cs" />
     <Compile Include="ViewModel\vmStart.cs" />
+    <Compile Include="View\wEditQuestion.xaml.cs">
+      <DependentUpon>wEditQuestion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wChoiceMenuAdmin.xaml.cs">
       <DependentUpon>wChoiceMenuAdmin.xaml</DependentUpon>
     </Compile>

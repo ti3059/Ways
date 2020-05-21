@@ -1,0 +1,52 @@
+﻿<Window x:Class="Ways.View.wEditQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ways.View"
+        mc:Ignorable="d"
+         WindowStartupLocation="CenterScreen"
+        Title="wEditQuestion" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Rectangle Height="469" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#222831"></GradientStop>
+                        <GradientStop Color="#3282b8" Offset="1"></GradientStop>
+                        <GradientStop Color="#0f4c75" Offset="0.5"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2">
+                <Grid HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="747">
+                    <Label x:Name="lQuestion" Content="Question n :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                    <TextBox x:Name="tbQuestion" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="727"/>
+                </Grid>
+                <Grid HorizontalAlignment="Left" Height="161" Margin="10,86,0,0" VerticalAlignment="Top" Width="747">
+                    <Grid HorizontalAlignment="Left" Height="71" Margin="375,10,0,0" VerticalAlignment="Top" Width="362">
+                        <Label Content="Réponse 2 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                        <TextBox x:Name="tbAnswerTwo" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="342"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="71" Margin="375,81,0,0" VerticalAlignment="Top" Width="362">
+                        <Label Content="Réponse 4 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                        <TextBox x:Name="tbAnswerFour" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="342"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="71" Margin="10,81,0,0" VerticalAlignment="Top" Width="360">
+                        <Label Content="Réponse 3 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                        <TextBox x:Name="tbAnswerThree" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="340"/>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Height="71" Margin="10,10,0,0" VerticalAlignment="Top" Width="360">
+                        <Label Content="Réponse 1 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
+                        <TextBox x:Name="tbAnswerOne" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="340"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <!--
+            <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
+            <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
+            -->
+        </Grid>
+    </Grid>
+</Window>
