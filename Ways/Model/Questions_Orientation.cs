@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Ways.Model
 {
 
-    class Questions_Orientation
+    public class Questions_Orientation
     {
         private int _id;
         private string _question;

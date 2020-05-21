@@ -17,9 +17,9 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wAtestMenu.xaml
     /// </summary>
-    public partial class wAtestMenu : Window
+    public partial class wTestMenu : Window
     {
-        public wAtestMenu()
+        public wTestMenu()
         {
             InitializeComponent();
         }

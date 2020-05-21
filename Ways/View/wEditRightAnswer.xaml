@@ -52,6 +52,5 @@
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
             -->
         </Grid>
-        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White"/>
     </Grid>
 </Window>

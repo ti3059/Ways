@@ -26,11 +26,12 @@ namespace Ways
             InitializeComponent();
             ViewModel.vmStart.getQuestionsGame();
             ViewModel.vmStart.getJobs();
+            ViewModel.vmStart.getQuestionsOrientation();
         }
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void btnAdministrateur_Click(object sender, RoutedEventArgs e)

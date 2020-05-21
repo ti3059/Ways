@@ -26,7 +26,7 @@ namespace Ways.View
 
         private void btnGameManage_Click(object sender, RoutedEventArgs e)
         {
-            wGameAdmin wGameAdmin = new wGameAdmin();
+            wAdmin wGameAdmin = new wAdmin("GAME");
             wGameAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             wGameAdmin.Show();
             this.Close();
@@ -34,7 +34,18 @@ namespace Ways.View
 
         private void btnOrientationManage_Click(object sender, RoutedEventArgs e)
         {
+            wAdmin pgLoginAdmin = new wAdmin("Orientation");
+            pgLoginAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pgLoginAdmin.Show();
+            this.Close();
+        }
 
+        private void bDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            Ways.MainWindow pgLoginAdmin = new Ways.MainWindow();
+            pgLoginAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pgLoginAdmin.Show();
+            this.Close();
         }
     }
 }
