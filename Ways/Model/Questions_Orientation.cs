@@ -22,36 +22,39 @@ namespace Ways.Model
         {
 
         }
-
-        private void AddQuestionOrientation(string question)
+        public void AddQuestionOrientation(string question)
         {
             Server s = new Server();
-            try
-            {
-                s.connection.Open();
-                MySqlCommand command = new MySqlCommand("INSERT INTO questions_orientation(question) VALUES(@question)", s.connection);
-                //command.Parameters.AddWithValue("@person", "Myname");
-                //command.Parameters.AddWithValue("@address", "Myaddress");
-                command.ExecuteNonQuery();
-            }
-            catch
-            {
-
-            }
-            finally
-            {
-                s.connection.Close();
-            }
+            s.connection.Open();
+            string request = "INSERT INTO question_orientation(question) VALUES (@question)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.ExecuteNonQuery();
+            //long id = cmd.LastInsertedId;
+            s.connection.Close();
         }
 
-        private void DeleteQuestionOrientation(int id)
+        public void DeleteQuestionOrientation(int id)
         {
-
+            Server s = new Server();
+            s.connection.Open();
+            string request = "DELET FROM question_orientation WHERE id = @id)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
         }
 
-        private void EditQuestionOrientation(int id, string question)
+        public void EditQuestionOrientation(int id, string question)
         {
-
+            Server s = new Server();
+            s.connection.Open();
+            string request = "UPDATE question_orientation SET question = @question WHERE id = @id)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
         }
 
         public List<Questions_Orientation> SelectQuestionsOrientation()

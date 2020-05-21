@@ -24,19 +24,39 @@ namespace Ways.Model
 
         }
 
-        private void AddQuestionGame(string question)
+        public void AddQuestionGame(string question)
         {
-
+            Server s = new Server();
+            s.connection.Open();
+            string request = "INSERT INTO question_jeu(question) VALUES (@question)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.ExecuteNonQuery();
+            //long id = cmd.LastInsertedId;
+            s.connection.Close();
         }
 
-        private void DeleteQuestionGame(int id)
+        public void DeleteQuestionGame(int id)
         {
-
+            Server s = new Server();
+            s.connection.Open();
+            string request = "DELET FROM question_jeu WHERE id = @id)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
         }
 
-        private void EditQuestionGame(int id, string question)
+        public void EditQuestionGame(int id, string question)
         {
-            
+            Server s = new Server();
+            s.connection.Open();
+            string request = "UPDATE question_jeu SET question = @question WHERE id = @id)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@question", question);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
         }
 
         public List<Questions_Game> SelectQuestionsGame()

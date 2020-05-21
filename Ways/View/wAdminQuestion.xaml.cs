@@ -87,11 +87,25 @@ namespace Ways.View
 
         private void bSuppression_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Would you like to greet the world with a \"Hello, world\"?", "My App", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("Êtes-vous sure de vouloir supprimer la question ?", "My App", MessageBoxButton.YesNo);
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    MessageBox.Show("Hello to you too!", "My App");
+                    if(message == "GAME")
+                    {
+                        Questions_Game qGame = new Questions_Game();
+                        qGame.DeleteQuestionGame(questionGame.Id);
+                        Answer_Game aGame = new Answer_Game();
+                        aGame.DeleteAnswersGameFromQuestionId(questionGame.Id);
+                    }
+                    else
+                    {
+                        Questions_Orientation qOrientation = new Questions_Orientation();
+                        qOrientation.DeleteQuestionOrientation(questionGame.Id);
+                        Answer_Orientation aOrientation = new Answer_Orientation();
+                        aOrientation.DeleteAnswersOrientationFromQuestionId(questionGame.Id);
+                    }
+                    MessageBox.Show("Question supprimée.", "My App");
                     //Mettre à jours la liste
                     View.wAdmin pg = new View.wAdmin(message);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
