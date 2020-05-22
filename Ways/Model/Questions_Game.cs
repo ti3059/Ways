@@ -24,7 +24,7 @@ namespace Ways.Model
 
         }
 
-        public long AddQuestionGame(string question)
+        public int AddQuestionGame(string question)
         {
             Server s = new Server();
             s.connection.Open();
@@ -32,7 +32,7 @@ namespace Ways.Model
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.ExecuteNonQuery();
-            long id = cmd.LastInsertedId;
+            int id = cmd.LastInsertedId;
             s.connection.Close();
             return id;
         }

@@ -20,14 +20,14 @@ namespace Ways.View
     /// </summary>
     public partial class wEditRightAnswer : Window
     {
-        private Questions_Orientation questionSelected;
-        private List<Model.Answer_Orientation> lstAnswer = new List<Model.Answer_Orientation>();
-        public wEditRightAnswer(Model.Questions_Orientation q, List<Model.Answer_Orientation> list)
+        private Questions_Game questionSelected;
+        private List<Answer_Game> lstAnswer = new List<Answer_Game>();
+
+        public wEditRightAnswer(Questions_Game question, List<Answer_Game> list)
         {
             InitializeComponent();
+            questionSelected = question;
             lstAnswer = list;
-            questionSelected = q;
-
         }
 
         public wEditRightAnswer()
@@ -36,15 +36,13 @@ namespace Ways.View
         }
 
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            /*Answer_Orientation answer = new Answer_Orientation();
-            answer.EditAnswerOrientation(lstAnswer[0].Id, lstAnswer[0].Text, );
-            answer.EditAnswerOrientation(lAnswerOne.Text.ToString(), true);
-            answer.EditAnswerOrientation(bAnswerTwo.Text.ToString(), true);
-            answer.EditAnswerOrientation(bAnswerThree.Text.ToString(), true);
-            answer.EditAnswerOrientation(bAnswerFour.Text.ToString(), true);*/
+            Answer_Game answer = new Answer_Game();
+            answer.EditAnswerGame(lstAnswer[0].Id, lstAnswer[0].Text, (bool)chbAnswerOne.IsChecked);
+            answer.EditAnswerGame(lstAnswer[1].Id, lstAnswer[1].Text, (bool)chbAnswerTwo.IsChecked);
+            answer.EditAnswerGame(lstAnswer[2].Id, lstAnswer[2].Text, (bool)chbAnswerThree.IsChecked);
+            answer.EditAnswerGame(lstAnswer[3].Id, lstAnswer[3].Text, (bool)chbAnswerFour.IsChecked);
         }
     }
-        
 }

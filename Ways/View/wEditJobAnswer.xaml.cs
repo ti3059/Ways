@@ -16,18 +16,18 @@ using Ways.Model;
 namespace Ways.View
 {
     /// <summary>
-    /// Logique d'interaction pour wEditJobAnswer.xaml
+    /// Logique d'interaction pour wEditJobAnswer .xaml
     /// </summary>
     public partial class wEditJobAnswer : Window
     {
-        private Questions_Game questionSelected;
-        private List<Model.Answer_Game> lstAnswer = new List<Model.Answer_Game>();
-
-        public wEditJobAnswer(Questions_Game q, List<Model.Answer_Game> lst)
+        private Questions_Orientation questionSelected;
+        private List<Answer_Orientation> listAnswer = new List<Answer_Orientation>();
+        public wEditJobAnswer(Questions_Orientation question, List<Answer_Orientation> list)
         {
             InitializeComponent();
-            questionSelected = q;
-            lstAnswer = lst;
+            questionSelected = question;
+            listAnswer = list;
+
         }
 
         public wEditJobAnswer()
@@ -35,15 +35,14 @@ namespace Ways.View
             InitializeComponent();
         }
 
-        /*private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Answer_Game answer = new Answer_Game();
-            answer.EditAnswerGame(lstAnswer[0].Id, lstAnswer[0].Text, );
-            answer.EditAnswerGame(lAnswerOne.Text.ToString(), true);
-            answer.EditAnswerGame(bAnswerTwo.Text.ToString(), true);
-            answer.EditAnswerGame(bAnswerThree.Text.ToString(), true);
-            answer.EditAnswerGame(bAnswerFour.Text.ToString(), true);
-        }*/
-
+            Answer_Orientation answer = new Answer_Orientation();
+            answer.EditAnswerOrientation(listAnswer[0].Id, listAnswer[0].Text, cbAnswerJobOne.SelectedIndex);
+            answer.EditAnswerOrientation(listAnswer[1].Id, listAnswer[1].Text, cbAnswerJobTwo.SelectedIndex);
+            answer.EditAnswerOrientation(listAnswer[2].Id, listAnswer[2].Text, cbAnswerJobThree.SelectedIndex);
+            answer.EditAnswerOrientation(listAnswer[3].Id, listAnswer[3].Text, cbAnswerJobFour.SelectedIndex);
+        }
     }
+        
 }

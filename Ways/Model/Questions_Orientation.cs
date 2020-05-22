@@ -22,7 +22,7 @@ namespace Ways.Model
         {
 
         }
-        public void AddQuestionOrientation(string question)
+        public int AddQuestionOrientation(string question)
         {
             Server s = new Server();
             s.connection.Open();
@@ -30,8 +30,9 @@ namespace Ways.Model
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.ExecuteNonQuery();
-            //long id = cmd.LastInsertedId;
+            int id = cmd.LastInsertedId;
             s.connection.Close();
+            return id;
         }
 
         public void DeleteQuestionOrientation(int id)

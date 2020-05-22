@@ -71,9 +71,9 @@ namespace Ways.View
                         questionGame.EditQuestionGame(qGame.Id, tbQuestion.Text.ToString());
                         Answer_Game answerGame = new Answer_Game();
                         answerGame.EditAnswerGame(listAnswerGame[0].Id, tbAnswerOne.Text.ToString(), listAnswerGame[0].Right);
-                        answerGame.EditAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString(), listAnswerGame[0].Right);
-                        answerGame.EditAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString(), listAnswerGame[0].Right);
-                        answerGame.EditAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString(), listAnswerGame[0].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString(), listAnswerGame[1].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString(), listAnswerGame[2].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString(), listAnswerGame[3].Right);
                     }
                     catch
                     {
@@ -85,7 +85,7 @@ namespace Ways.View
                     try
                     {
                         Questions_Game questionGame = new Questions_Game();
-                        long id = questionGame.AddQuestionGame(tbQuestion.Text.ToString());
+                        int id = questionGame.AddQuestionGame(tbQuestion.Text.ToString());
                         Answer_Game answerGame = new Answer_Game();
                         answerGame.AddAnswerGame(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), true);
                         answerGame.AddAnswerGame(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), true);
@@ -108,9 +108,9 @@ namespace Ways.View
                         questionOrientation.EditQuestionOrientation(qGame.Id, tbQuestion.Text.ToString());
                         Answer_Orientation answerOrientation = new Answer_Orientation();
                         answerOrientation.EditAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString(), listAnswerOrientation[1].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString(), listAnswerOrientation[2].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString(), listAnswerOrientation[3].JobIndex);
                     }
                     catch
                     {
@@ -123,12 +123,12 @@ namespace Ways.View
                     try
                     {
                         Questions_Orientation questionOrientation = new Questions_Orientation();
-                        questionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
+                        int id = questionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
                         Answer_Orientation answerOrientation = new Answer_Orientation();
-                        answerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), 1);
-                        answerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), 2);
-                        answerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), 3);
-                        answerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), 4);
+                        answerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), 1);
+                        answerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), 2);
+                        answerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), 3);
+                        answerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), 4);
                     }
                     catch
                     {

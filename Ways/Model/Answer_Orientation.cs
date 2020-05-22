@@ -33,13 +33,14 @@ namespace Ways.Model
         public string Text { get => _text; set => _text = value; }
         public int JobIndex { get => _jobIndex; set => _jobIndex = value; }
 
-        public void AddAnswerOrientation(string answer, int jobIndex)
+        public void AddAnswerOrientation(string answer, int questionId, int jobIndex)
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "INSERT INTO reponses_orientation(reponse, question_id) VALUES (@answer, @jobIndex)";
+            string request = "INSERT INTO reponses_orientation(reponse, question_id, job_index) VALUES (@answer, @questionId, @jobIndex)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
+            cmd.Parameters.AddWithValue("@questionId", questionId);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
             cmd.ExecuteNonQuery();
             //long id = cmd.LastInsertedId;
