@@ -40,7 +40,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "DELET FROM question_jeu WHERE id = @id)";
+            string request = "DELETE FROM question_jeu WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();

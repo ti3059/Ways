@@ -26,7 +26,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "INSERT INTO question_orientation(question) VALUES (@question)";
+            string request = "INSERT INTO questions_orientation(question) VALUES (@question)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.ExecuteNonQuery();
@@ -38,7 +38,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "DELET FROM question_orientation WHERE id = @id)";
+            string request = "DELET FROM questions_orientation WHERE id = @id)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
@@ -49,7 +49,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_orientation SET question = @question WHERE id = @id)";
+            string request = "UPDATE questions_orientation SET question = @question WHERE id = @id)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.Parameters.AddWithValue("@id", id);

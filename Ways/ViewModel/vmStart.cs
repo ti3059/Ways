@@ -14,12 +14,14 @@ namespace Ways.ViewModel
         public static void getQuestionsGame()
         {
             Questions_Game game = new Questions_Game();
+            lstQustionsGames.Clear();
             lstQustionsGames = game.SelectQuestionsGame();
         }
 
         public static void getQuestionsOrientation()
         {
             Questions_Orientation or = new Questions_Orientation();
+            lstQuestionsOrientation.Clear();
             lstQuestionsOrientation = or.SelectQuestionsOrientation();
         }
 

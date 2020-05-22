@@ -37,7 +37,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "INSERT INTO reponses_orientation(reponse, job) VALUES (@answer, @jobIndex)";
+            string request = "INSERT INTO reponses_orientation(reponse, question_id) VALUES (@answer, @jobIndex)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
@@ -83,7 +83,7 @@ namespace Ways.Model
                 {
                     while (reader.Read())
                     {
-                        Answer_Orientation _answer_Orientation= TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["text"]), Convert.ToString(reader["job_id"]));
+                        Answer_Orientation _answer_Orientation= TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["reponse"]), Convert.ToInt32(reader["job_id"]));
                         _lstAnswerOrientation.Add(_answer_Orientation);                    
                     }
                 }

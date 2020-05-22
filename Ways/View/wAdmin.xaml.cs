@@ -38,6 +38,7 @@ namespace Ways.View
 
         public void addQuestionGameToListView()
         {
+            vmStart.getQuestionsGame();
             foreach(Questions_Game q in vmStart.lstQustionsGames)
             {
                 lvAdmin.Items.Add(q);
