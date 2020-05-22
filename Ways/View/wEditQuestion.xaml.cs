@@ -116,10 +116,10 @@ namespace Ways.View
                         Questions_Orientation questionOrientation = new Questions_Orientation();
                         questionOrientation.EditQuestionOrientation(qGame.Id, tbQuestion.Text.ToString());
                         Answer_Orientation answerOrientation = new Answer_Orientation();
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString(), listAnswerOrientation[1].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString(), listAnswerOrientation[2].JobIndex);
-                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString(), listAnswerOrientation[3].JobIndex);
+                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString());
+                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString());
+                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString());
+                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString());
                         MessageBox.Show("Modification effectué avec succès");
                     }
                     catch

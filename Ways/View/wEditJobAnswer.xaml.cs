@@ -43,10 +43,10 @@ namespace Ways.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Answer_Orientation answer = new Answer_Orientation();
-            answer.EditAnswerOrientation(lstAnswer[0].Id, lstAnswer[0].Text, cbAnswerJobOne.SelectedIndex);
-            answer.EditAnswerOrientation(lstAnswer[1].Id, lstAnswer[1].Text, cbAnswerJobTwo.SelectedIndex);
-            answer.EditAnswerOrientation(lstAnswer[2].Id, lstAnswer[2].Text, cbAnswerJobThree.SelectedIndex);
-            answer.EditAnswerOrientation(lstAnswer[3].Id, lstAnswer[3].Text, cbAnswerJobFour.SelectedIndex);
+            answer.EditJobAnswerOrientation(lstAnswer[0].Id, cbAnswerJobOne.SelectedIndex);
+            answer.EditJobAnswerOrientation(lstAnswer[1].Id, cbAnswerJobTwo.SelectedIndex);
+            answer.EditJobAnswerOrientation(lstAnswer[2].Id, cbAnswerJobThree.SelectedIndex);
+            answer.EditJobAnswerOrientation(lstAnswer[3].Id, cbAnswerJobFour.SelectedIndex);
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)
@@ -68,9 +68,13 @@ namespace Ways.View
             foreach(Job j in vmStart.lstjobs)
             {
                 cbAnswerJobOne.Items.Add(j.Name.ToString());
+                cbAnswerJobOne.SelectedIndex = lstAnswer[0].JobIndex;
                 cbAnswerJobTwo.Items.Add(j.Name.ToString());
+                cbAnswerJobTwo.SelectedIndex = lstAnswer[1].JobIndex;
                 cbAnswerJobThree.Items.Add(j.Name.ToString());
+                cbAnswerJobThree.SelectedIndex = lstAnswer[2].JobIndex;
                 cbAnswerJobFour.Items.Add(j.Name.ToString());
+                cbAnswerJobFour.SelectedIndex = lstAnswer[3].JobIndex;
             }
         }
     }

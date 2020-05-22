@@ -58,11 +58,21 @@ namespace Ways.Model
             s.connection.Close();
         }
 
-        public void EditAnswerOrientation(int id, string answer, int jobIndex)
+        public void EditTextAnswerOrientation(int id, string answer)
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_orientation SET question = @answer, job_index = @jobIndex WHERE id = @id)";
+            string request = "UPDATE question_orientation SET reponse_orientation = @answer, WHERE id = @id)";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@answer", answer);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
+        }
+        public void EditJobAnswerOrientation(int id, int jobIndex)
+        {
+            Server s = new Server();
+            s.connection.Open();
+            string request = "UPDATE question_orientation SET job_index = @jobIndex WHERE id = @id)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
