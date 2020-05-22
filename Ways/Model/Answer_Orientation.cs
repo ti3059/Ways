@@ -51,7 +51,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "DELET FROM reponses_orientation WHERE question_id = @questionId)";
+            string request = "DELETE FROM reponses_orientation WHERE question_id = @questionId";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@questionId", questionId);
             cmd.ExecuteNonQuery();

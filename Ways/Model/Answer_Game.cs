@@ -59,14 +59,25 @@ namespace Ways.Model
             s.connection.Close();
         }
 
-        public void EditAnswerGame(int id, string answer, bool right)
+        public void EditRightAnswerGame(int id, bool right)
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_jeu SET question = @answer, vrai = @right WHERE id = @id)";
+            string request = "UPDATE reponses_jeu SET vrai = @right WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
-            cmd.Parameters.AddWithValue("@answer", answer);
             cmd.Parameters.AddWithValue("@right", right);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            s.connection.Close();
+        }
+        public void EditTextAnswerGame(int id, string answer)
+        {
+            Server s = new Server();
+            s.connection.Open();
+            string request = "UPDATE reponses_jeu SET reponse = @reponse WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(request, s.connection);
+            cmd.Parameters.AddWithValue("@reponse", answer);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             s.connection.Close();
         }
@@ -85,7 +96,7 @@ namespace Ways.Model
                 {
                     while (reader.Read())
                     {
-                        Answer_Game _answer_Game = TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["text"]), Convert.ToBoolean(reader["right"]));
+                        Answer_Game _answer_Game = TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["reponse"]), Convert.ToBoolean(reader["vrai"]));
                         _lstAnswerGame.Add(_answer_Game);                    
                     }
                 }

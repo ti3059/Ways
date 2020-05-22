@@ -70,14 +70,14 @@ namespace Ways.View
         {
             if(message == "GAME")
             {
-                View.wEditRightAnswer pg = new View.wEditRightAnswer();
+                View.wEditRightAnswer pg = new View.wEditRightAnswer(questionGame, message);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
             }
             else
             {
-                View.wEditJobAnswer pg = new View.wEditJobAnswer();
+                View.wEditJobAnswer pg = new View.wEditJobAnswer(questionOrientation, message);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
@@ -101,9 +101,9 @@ namespace Ways.View
                     else
                     {
                         Answer_Orientation aOrientation = new Answer_Orientation();
-                        aOrientation.DeleteAnswersOrientationFromQuestionId(questionGame.Id);
+                        aOrientation.DeleteAnswersOrientationFromQuestionId(questionOrientation.Id);
                         Questions_Orientation qOrientation = new Questions_Orientation();
-                        qOrientation.DeleteQuestionOrientation(questionGame.Id);
+                        qOrientation.DeleteQuestionOrientation(questionOrientation.Id);
                     }
                     MessageBox.Show("Question supprimée.", "My App");
                     //Mettre à jours la liste

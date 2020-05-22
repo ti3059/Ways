@@ -23,7 +23,7 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White" Height="20" Width="39"/>
+            <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White" Height="20" Width="39" Click="bBack_Click"/>
             <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="360" Width="686">
                 <TextBlock x:Name="lQuestionSubject" HorizontalAlignment="Left" Margin="0,0,18,0" TextWrapping="Wrap" Text="Sujet de la question" VerticalAlignment="Center" Width="670" Foreground="White" FontSize="14" TextAlignment="Center"/>
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Margin="0,30,0,0">

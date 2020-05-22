@@ -22,27 +22,63 @@ namespace Ways.View
     {
         private Questions_Game questionSelected;
         private List<Answer_Game> lstAnswer = new List<Answer_Game>();
+        private string message;
 
-        public wEditRightAnswer(Questions_Game question, List<Answer_Game> list)
+
+        public wEditRightAnswer(Questions_Game question, string msg)
         {
             InitializeComponent();
             questionSelected = question;
-            lstAnswer = list;
-        }
-
-        public wEditRightAnswer()
-        {
-            InitializeComponent();
+            message = msg;
+            Answer_Game answer_Game = new Answer_Game();
+            lstAnswer = answer_Game.SelectAnswerGameFromQuestionGameId(questionSelected.Id);
+            setAnswers();
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Answer_Game answer = new Answer_Game();
-            answer.EditAnswerGame(lstAnswer[0].Id, lstAnswer[0].Text, (bool)chbAnswerOne.IsChecked);
-            answer.EditAnswerGame(lstAnswer[1].Id, lstAnswer[1].Text, (bool)chbAnswerTwo.IsChecked);
-            answer.EditAnswerGame(lstAnswer[2].Id, lstAnswer[2].Text, (bool)chbAnswerThree.IsChecked);
-            answer.EditAnswerGame(lstAnswer[3].Id, lstAnswer[3].Text, (bool)chbAnswerFour.IsChecked);
+            try
+            {
+                Answer_Game answer = new Answer_Game();
+                answer.EditRightAnswerGame(lstAnswer[0].Id, (bool)chbAnswerOne.IsChecked);
+                answer.EditRightAnswerGame(lstAnswer[1].Id, (bool)chbAnswerTwo.IsChecked);
+                answer.EditRightAnswerGame(lstAnswer[2].Id, (bool)chbAnswerThree.IsChecked);
+                answer.EditRightAnswerGame(lstAnswer[3].Id, (bool)chbAnswerFour.IsChecked);
+                MessageBox.Show("Modification effectuée");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la modification de la question");   
+            }
+            View.wAdminQuestion pg = new View.wAdminQuestion(message, questionSelected);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
+        }
+
+        private void setAnswers()
+        {
+            lQuestionSubject.Text = questionSelected.Question;
+            lAnswerOne.Text = lstAnswer[0].Text;
+            lAnswerTwo.Text = lstAnswer[1].Text;
+            lAnswerThree.Text = lstAnswer[2].Text;
+            lAnswerFour.Text = lstAnswer[3].Text;
+
+            chbAnswerOne.IsChecked = lstAnswer[0].Right;
+            chbAnswerTwo.IsChecked = lstAnswer[1].Right;
+            chbAnswerThree.IsChecked = lstAnswer[2].Right;
+            chbAnswerFour.IsChecked = lstAnswer[3].Right;
+
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+            View.wAdminQuestion pg = new View.wAdminQuestion(message);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
     }
 }

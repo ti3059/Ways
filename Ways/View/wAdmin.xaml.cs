@@ -47,6 +47,7 @@ namespace Ways.View
 
         public void addQuestionOrientationToListView()
         {
+            vmStart.getQuestionsOrientation();
             foreach (Questions_Orientation q in vmStart.lstQuestionsOrientation)
             {
                 lvAdmin.Items.Add(q);

@@ -24,7 +24,7 @@ namespace Ways.Model
 
         }
 
-        public int AddQuestionGame(string question)
+        public long AddQuestionGame(string question)
         {
             Server s = new Server();
             s.connection.Open();
@@ -32,7 +32,7 @@ namespace Ways.Model
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.ExecuteNonQuery();
-            int id = cmd.LastInsertedId;
+            long id = cmd.LastInsertedId;
             s.connection.Close();
             return id;
         }
@@ -52,7 +52,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_jeu SET question = @question WHERE id = @id)";
+            string request = "UPDATE question_jeu SET question = @question WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.Parameters.AddWithValue("@id", id);
