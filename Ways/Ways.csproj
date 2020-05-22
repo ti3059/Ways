@@ -68,11 +68,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wEditRightAnswer.xaml">
+    <Page Include="View\wEditJobAnswer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wEditJobAnswer.xaml">
+    <Page Include="View\wEditRightAnswer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -129,11 +129,11 @@
     <Compile Include="View\wTestMenu.xaml.cs">
       <DependentUpon>wTestMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wEditRightAnswer.xaml.cs">
-      <DependentUpon>wEditRightAnswer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\wEditJobAnswer.xaml.cs">
       <DependentUpon>wEditJobAnswer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wEditRightAnswer.xaml.cs">
+      <DependentUpon>wEditRightAnswer.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wEditQuestion.xaml.cs">
       <DependentUpon>wEditQuestion.xaml</DependentUpon>

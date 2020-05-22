@@ -11,18 +11,40 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ways.Model;
 
 namespace Ways.View
 {
     /// <summary>
-    /// Logique d'interaction pour wEditJobAnswer.xaml
+    /// Logique d'interaction pour wEditRightAnswer.xaml
     /// </summary>
-    public partial class wEditJobAnswer : Window
+    public partial class wEditRightAnswer : Window
     {
-        public wEditJobAnswer()
+        private Questions_Orientation questionSelected;
+        private List<Model.Answer_Orientation> lstAnswer = new List<Model.Answer_Orientation>();
+        public wEditRightAnswer(Model.Questions_Orientation q, List<Model.Answer_Orientation> list)
+        {
+            InitializeComponent();
+            lstAnswer = list;
+            questionSelected = q;
+
+        }
+
+        public wEditRightAnswer()
         {
             InitializeComponent();
         }
 
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            /*Answer_Orientation answer = new Answer_Orientation();
+            answer.EditAnswerOrientation(lstAnswer[0].Id, lstAnswer[0].Text, );
+            answer.EditAnswerOrientation(lAnswerOne.Text.ToString(), true);
+            answer.EditAnswerOrientation(bAnswerTwo.Text.ToString(), true);
+            answer.EditAnswerOrientation(bAnswerThree.Text.ToString(), true);
+            answer.EditAnswerOrientation(bAnswerFour.Text.ToString(), true);*/
+        }
     }
+        
 }

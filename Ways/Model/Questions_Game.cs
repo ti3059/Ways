@@ -24,7 +24,7 @@ namespace Ways.Model
 
         }
 
-        public void AddQuestionGame(string question)
+        public long AddQuestionGame(string question)
         {
             Server s = new Server();
             s.connection.Open();
@@ -32,8 +32,9 @@ namespace Ways.Model
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.ExecuteNonQuery();
-            //long id = cmd.LastInsertedId;
+            long id = cmd.LastInsertedId;
             s.connection.Close();
+            return id;
         }
 
         public void DeleteQuestionGame(int id)
@@ -58,7 +59,7 @@ namespace Ways.Model
             cmd.ExecuteNonQuery();
             s.connection.Close();
         }
-
+            
         public List<Questions_Game> SelectQuestionsGame()
         {
             MySqlDataReader reader = null;

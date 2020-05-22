@@ -34,13 +34,14 @@ namespace Ways.Model
         public string Text { get => _text; set => _text = value; }
         public bool Right { get => _right; set => _right = value; }
 
-        public void AddAnswerGame(string answer, bool right)
+        public void AddAnswerGame(string answer, int id, bool right)
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "INSERT INTO reponses_jeu(reponse, vrai) VALUES (@answer, @right)";
+            string request = "INSERT INTO reponses_jeu(reponse, question_id, vrai) VALUES (@answer, @id, @right)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@right", right);
             cmd.ExecuteNonQuery();
             //long id = cmd.LastInsertedId;

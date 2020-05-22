@@ -61,7 +61,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_orientation SET question = @answer, jobIndex = @jobIndex WHERE id = @id)";
+            string request = "UPDATE question_orientation SET question = @answer, job_index = @jobIndex WHERE id = @id)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
@@ -83,7 +83,7 @@ namespace Ways.Model
                 {
                     while (reader.Read())
                     {
-                        Answer_Orientation _answer_Orientation= TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["reponse"]), Convert.ToInt32(reader["job_id"]));
+                        Answer_Orientation _answer_Orientation= TransformToAnswer(Convert.ToInt32(reader["id"]), Convert.ToInt32(reader["question_id"]), Convert.ToString(reader["reponse"]), Convert.ToInt32(reader["job_index"]));
                         _lstAnswerOrientation.Add(_answer_Orientation);                    
                     }
                 }

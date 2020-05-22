@@ -1,4 +1,4 @@
-﻿<Window x:Class="Ways.View.wEditJobAnswer"
+﻿<Window x:Class="Ways.View.wEditRightAnswer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -28,30 +28,25 @@
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,4,0,0" VerticalAlignment="Top" Width="727">
                         <Label Content="Réponse 1 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
                         <TextBlock x:Name="lAnswerOne" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Réponse" VerticalAlignment="Top" Width="473" Height="20" Foreground="White" FontSize="14"/>
-                        <Label Content="Métier :" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <ComboBox x:Name="cbAnswerJobOne" HorizontalAlignment="Left" Margin="543,39,0,0" VerticalAlignment="Top" Width="174" BorderBrush="White" Background="#00000000"/>
+                        <CheckBox x:Name="chbAnswerOne" HorizontalAlignment="Left" Margin="701,46,0,0" VerticalAlignment="Top" Background="Transparent" BorderBrush="White" Foreground="White"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,75,0,0" VerticalAlignment="Top" Width="727">
                         <Label Content="Réponse 2 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
                         <TextBlock x:Name="lAnswerTwo" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Réponse" VerticalAlignment="Top" Width="473" Height="20" Foreground="White" FontSize="14"/>
-                        <Label Content="Métier :" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <ComboBox x:Name="cbAnswerJobTwo" HorizontalAlignment="Left" Margin="543,39,0,0" VerticalAlignment="Top" Width="174" BorderBrush="White" Background="#00000000"/>
+                        <CheckBox x:Name="chbAnswerTwo" HorizontalAlignment="Left" Margin="701,46,0,0" VerticalAlignment="Top" Background="Transparent" BorderBrush="White" Foreground="White"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,146,0,0" VerticalAlignment="Top" Width="727">
                         <Label Content="Réponse 3 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
                         <TextBlock x:Name="lAnswerThree" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Réponse" VerticalAlignment="Top" Width="473" Height="20" Foreground="White" FontSize="14"/>
-                        <Label Content="Métier :" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <ComboBox x:Name="cbAnswerJobThree" HorizontalAlignment="Left" Margin="543,39,0,0" VerticalAlignment="Top" Width="174" BorderBrush="White" Background="#00000000"/>
+                        <CheckBox x:Name="chbAnswerThree" HorizontalAlignment="Left" Margin="701,46,0,0" VerticalAlignment="Top" Background="Transparent" BorderBrush="White" Foreground="White"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="71" Margin="10,217,0,0" VerticalAlignment="Top" Width="727">
                         <Label Content="Réponse 4 :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <TextBlock x:Name="lAnswerFour" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Réponse" VerticalAlignment="Top" Width="473" Height="20" Foreground="White" FontSize="14"/>
-                        <Label Content="Métier :" HorizontalAlignment="Left" Margin="543,10,0,0" VerticalAlignment="Top" Foreground="White"/>
-                        <ComboBox x:Name="cbAnswerJobFour" HorizontalAlignment="Left" Margin="543,39,0,0" VerticalAlignment="Top" Width="174" BorderBrush="White" Background="#00000000"/>
+                        <TextBlock x:Name="lAnswerFour" HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="473" Height="20" Foreground="White" FontSize="14"><Run Text="Réponse"/></TextBlock>
+                        <CheckBox x:Name="chbAnswerFour" HorizontalAlignment="Left" Margin="701,46,0,0" VerticalAlignment="Top" Background="Transparent" BorderBrush="White" Foreground="White"/>
                     </Grid>
                 </Grid>
             </Grid>
-            <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White"/>
             <!--
             <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>

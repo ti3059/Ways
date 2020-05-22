@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -64,48 +65,81 @@ namespace Ways.View
             {
                 if (qGame != null)
                 {
-                    Questions_Game questionGame = new Questions_Game();
-                    questionGame.EditQuestionGame(qGame.Id, tbQuestion.Text.ToString());
-                    Answer_Game answerGame = new Answer_Game();
-                    answerGame.EditAnswerGame(listAnswerGame[0].Id, tbAnswerOne.Text.ToString(), listAnswerGame[0].Right);
-                    answerGame.EditAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString(), listAnswerGame[0].Right);
-                    answerGame.EditAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString(), listAnswerGame[0].Right);
-                    answerGame.EditAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString(), listAnswerGame[0].Right);
+                    try
+                    {
+                        Questions_Game questionGame = new Questions_Game();
+                        questionGame.EditQuestionGame(qGame.Id, tbQuestion.Text.ToString());
+                        Answer_Game answerGame = new Answer_Game();
+                        answerGame.EditAnswerGame(listAnswerGame[0].Id, tbAnswerOne.Text.ToString(), listAnswerGame[0].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString(), listAnswerGame[0].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString(), listAnswerGame[0].Right);
+                        answerGame.EditAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString(), listAnswerGame[0].Right);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Attention, impossible de modifier la question");
+                    }
                 }
                 else
                 {
-                    Questions_Game questionGame = new Questions_Game();
-                    questionGame.AddQuestionGame(tbQuestion.Text.ToString());
-                    Answer_Game answerGame = new Answer_Game();
-                    answerGame.AddAnswerGame(tbAnswerOne.Text.ToString(), true);
-                    answerGame.AddAnswerGame(tbAnswerTwo.Text.ToString(), true);
-                    answerGame.AddAnswerGame(tbAnswerThree.Text.ToString(), true);
-                    answerGame.AddAnswerGame(tbAnswerFour.Text.ToString(), true);
+                    try
+                    {
+                        Questions_Game questionGame = new Questions_Game();
+                        long id = questionGame.AddQuestionGame(tbQuestion.Text.ToString());
+                        Answer_Game answerGame = new Answer_Game();
+                        answerGame.AddAnswerGame(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), true);
+                        answerGame.AddAnswerGame(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), true);
+                        answerGame.AddAnswerGame(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), true);
+                        answerGame.AddAnswerGame(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), true);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Attention, impossible d'ajouter la question");
+                    }
                 }
             }
             else
             {
                 if (qOr != null)
                 {
-                    Questions_Orientation questionOrientation = new Questions_Orientation();
-                    questionOrientation.EditQuestionOrientation(qGame.Id, tbQuestion.Text.ToString());
-                    Answer_Orientation answerOrientation = new Answer_Orientation();
-                    answerOrientation.EditAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                    answerOrientation.EditAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                    answerOrientation.EditAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString(), listAnswerOrientation[0].JobIndex);
-                    answerOrientation.EditAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                    try
+                    {
+                        Questions_Orientation questionOrientation = new Questions_Orientation();
+                        questionOrientation.EditQuestionOrientation(qGame.Id, tbQuestion.Text.ToString());
+                        Answer_Orientation answerOrientation = new Answer_Orientation();
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                        answerOrientation.EditAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString(), listAnswerOrientation[0].JobIndex);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Attention, impossible de modifier la question");
+                    }
+
                 }
                 else
                 {
-                    Questions_Orientation questionOrientation = new Questions_Orientation();
-                    questionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
-                    Answer_Orientation answerOrientation = new Answer_Orientation();
-                    answerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), 1);
-                    answerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), 2);
-                    answerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), 3);
-                    answerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), 4);
+                    try
+                    {
+                        Questions_Orientation questionOrientation = new Questions_Orientation();
+                        questionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
+                        Answer_Orientation answerOrientation = new Answer_Orientation();
+                        answerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), 1);
+                        answerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), 2);
+                        answerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), 3);
+                        answerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), 4);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Attention, impossible d'ajouter la question");
+                    }
                 }
             }
+            wChoiceMenuAdmin wChoiceMenuAdmin = new wChoiceMenuAdmin();
+            wChoiceMenuAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            wChoiceMenuAdmin.Show();
+            this.Close();
         }
 
         public List<Answer_Game> getAnswerByQuestionGameId(int questionGameId)
