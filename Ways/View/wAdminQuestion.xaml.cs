@@ -93,17 +93,17 @@ namespace Ways.View
                 case MessageBoxResult.Yes:
                     if(message == "GAME")
                     {
-                        Questions_Game qGame = new Questions_Game();
-                        qGame.DeleteQuestionGame(questionGame.Id);
                         Answer_Game aGame = new Answer_Game();
                         aGame.DeleteAnswersGameFromQuestionId(questionGame.Id);
+                        Questions_Game qGame = new Questions_Game();
+                        qGame.DeleteQuestionGame(questionGame.Id);
                     }
                     else
                     {
-                        Questions_Orientation qOrientation = new Questions_Orientation();
-                        qOrientation.DeleteQuestionOrientation(questionGame.Id);
                         Answer_Orientation aOrientation = new Answer_Orientation();
                         aOrientation.DeleteAnswersOrientationFromQuestionId(questionGame.Id);
+                        Questions_Orientation qOrientation = new Questions_Orientation();
+                        qOrientation.DeleteQuestionOrientation(questionGame.Id);
                     }
                     MessageBox.Show("Question supprimée.", "My App");
                     //Mettre à jours la liste

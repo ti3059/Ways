@@ -30,12 +30,5 @@ namespace Ways.ViewModel
             Job job = new Job();
             List<Job> lstJobs = job.SelectJobs();
         }
-
-        public static void getSkills()
-        {
-            Job job = new Job();
-            Skill skill = new Skill();
-            List<Skill> lstSkills = skill.SelectSkills(job.SelectJobs());
-        }
     }
 }
