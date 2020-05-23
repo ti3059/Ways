@@ -20,26 +20,46 @@ namespace Ways.View
     /// </summary>
     public partial class wQuestion : Window
     {
+        private string currentTest;
         private Test_Orientation testOrientation;
         private Answer_Orientation answerOrientationSelected;
+        private Test_Game testGame;
+        private Answer_Game answerGameSelected;
 
         public wQuestion()
         {
             InitializeComponent();
         }
-        public wQuestion(Test_Orientation testOrientation)
+        public wQuestion(Test_Orientation testOrientation) : this()
         {
-            InitializeComponent();
+            CurrentTest = "Orientation";
             TestOrientation = testOrientation;
             SetQuestions();
         }
 
+        public wQuestion(Test_Game testGame) : this()
+        {
+            CurrentTest = "Game";
+            TestGame = testGame;
+            SetQuestions();
+        }
+
+        public string CurrentTest { get => currentTest; set => currentTest = value; }
         public Test_Orientation TestOrientation { get => testOrientation; set => testOrientation = value; }
         public Answer_Orientation AnswerOrientationSelected { get => answerOrientationSelected; set => answerOrientationSelected = value; }
+        public Test_Game TestGame { get => testGame; set => testGame = value; }
+        public Answer_Game AnswerGameSelected { get => answerGameSelected; set => answerGameSelected = value; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TestOrientation.Reply(AnswerOrientationSelected.JobIndex);
+            if(CurrentTest == "Orientation")
+            {
+                TestOrientation.Reply(AnswerOrientationSelected.JobIndex);
+            }
+            else
+            {
+                TestGame.Reply(AnswerGameSelected.Right);
+            }
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)
@@ -75,7 +95,6 @@ namespace Ways.View
             lAnswerTwo.Content = TestOrientation.CurrentQuestion.Question[1];
             lAnswerThree.Content = TestOrientation.CurrentQuestion.Question[2];
             lAnswerFour.Content = TestOrientation.CurrentQuestion.Question[3];
-
         }
     }
 }

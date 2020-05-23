@@ -9,28 +9,31 @@ using System.Threading.Tasks;
 
 namespace Ways.Model
 {
-    public class Test_Orientation
+    public class Test_Game
     {
         private Candidate candidate;
-        private Questions_Orientation currentQuestion;
-        private List<Questions_Orientation> questions;
+        private Questions_Game currentQuestion;
+        private List<Questions_Game> questions;
 
-        public Test_Orientation(Candidate candidate)
+        public Test_Game(Candidate candidate)
         {
             Candidate = candidate;
-            Questions_Orientation question_Orientation = new Questions_Orientation();
-            Questions = question_Orientation.SelectQuestionsOrientation();
+            Questions_Game question_Game = new Questions_Game();
+            Questions = question_Game.SelectQuestionsGame();
             currentQuestion = Questions[0];
         }
 
         public Candidate Candidate { get => candidate; set => candidate = value; }
-        public Questions_Orientation CurrentQuestion { get => currentQuestion; set => currentQuestion = value; }
-        public List<Questions_Orientation> Questions { get => questions; set => questions = value; }
+        public Questions_Game CurrentQuestion { get => currentQuestion; set => currentQuestion = value; }
+        public List<Questions_Game> Questions { get => questions; set => questions = value; }
 
-        public void Reply(int jobIndex)
+        public void Reply(bool answerSelected)
         {
-            Candidate.UpOrientation(jobIndex);
-            if (Questions[Questions.Count] != CurrentQuestion)
+            if(answerSelected)
+            {
+                Candidate.UpPoints();
+            }
+            if(Questions[Questions.Count] != CurrentQuestion)
             {
                 for (int i = 0; i <= Questions.Count; i++)
                 {
