@@ -109,6 +109,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Admin.cs" />
+    <Compile Include="Model\Test_Orientation.cs" />
     <Compile Include="Model\Answer_Orientation.cs" />
     <Compile Include="Model\Candidate.cs" />
     <Compile Include="Model\Job.cs" />

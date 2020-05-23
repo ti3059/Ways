@@ -22,6 +22,10 @@ namespace Ways.Model
         {
 
         }
+
+        public int Id { get => _id; set => _id = value; }
+        public string Question { get => _question; set => _question = value; }
+
         public long AddQuestionOrientation(string question)
         {
             Server s = new Server();
@@ -93,8 +97,5 @@ namespace Ways.Model
             return questionOrientation;
         }
 
-
-        public int Id { get => _id; set => _id = value; }
-        public string Question { get => _question; set => _question = value; }
     }
 }

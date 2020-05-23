@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ways.Model
 {
-    class Candidate
+    public class Candidate
     {
 		private string _surnameGame;            //Bdd
 		private int _resultGame;                //Bdd
@@ -17,6 +17,8 @@ namespace Ways.Model
 		private string _surnameOrientation;     //?Bdd
 		private string _emailOrientation;       //-Bdd
 		private string _resultOrientation;      //-Bdd
+
+		private List<int> orientationPoints; //tableau parallèle aux métiers contenant à la même index le nombre de points du métier
 		public Candidate()
 		{
 
@@ -29,5 +31,16 @@ namespace Ways.Model
 		public string SurnameOrientation { get => _surnameOrientation; set => _surnameOrientation = value; }
 		public string EmailOrientation { get => _emailOrientation; set => _emailOrientation = value; }
 		public string ResultOrientation { get => _resultOrientation; set => _resultOrientation = value; }
+		public List<int> OrientationPoints { get => orientationPoints; set => orientationPoints = value; }
+
+		public void UpOrientation(int jobIndex)
+		{
+			OrientationPoints[jobIndex] ++;
+		}
+
+		public void UpPoints()
+		{
+			Point ++;
+		} 
 	}
 }
