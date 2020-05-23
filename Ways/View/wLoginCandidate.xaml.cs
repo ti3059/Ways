@@ -11,35 +11,27 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Ways.Model;
 
 namespace Ways.View
 {
     /// <summary>
-    /// Logique d'interaction pour wAtestMenu.xaml
+    /// Logique d'interaction pour wLoginCandidate.xaml
     /// </summary>
-    public partial class wTestMenu : Window
+    public partial class wLoginCandidate : Window
     {
-        private Candidate candidate;
-
-        public wTestMenu(Candidate c)
+        public wLoginCandidate()
         {
             InitializeComponent();
-            candidate = c;
         }
 
-        private void bOrientation_Click(object sender, RoutedEventArgs e)
+        private void btnCandidate_Click(object sender, RoutedEventArgs e)
         {
-            Test_Orientation test_Orientation = new Test_Orientation(candidate);
-            View.wQuestion pg = new View.wQuestion(test_Orientation);
+            Model.Candidate c = new Model.Candidate();
+            c.Surname = tbLogin.Text;
+            View.wTestMenu pg = new View.wTestMenu(c);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
-        }
-
-        private void bGame_Click(object sender, RoutedEventArgs e)
-        {
-            //Test_Game ...
         }
     }
 }

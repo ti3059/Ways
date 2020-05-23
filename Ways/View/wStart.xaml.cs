@@ -31,7 +31,10 @@ namespace Ways
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
         {
-           
+            View.wLoginCandidate pg = new View.wLoginCandidate();
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
 
         private void btnAdministrateur_Click(object sender, RoutedEventArgs e)

@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\wLoginCandidate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\wTestMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,10 +100,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewModel\wOrientationAdmin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\wStart.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,6 +127,9 @@
     <Compile Include="View\wForm.xaml.cs">
       <DependentUpon>wForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\wLoginCandidate.xaml.cs">
+      <DependentUpon>wLoginCandidate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wTestMenu.xaml.cs">
       <DependentUpon>wTestMenu.xaml</DependentUpon>
     </Compile>
@@ -150,9 +153,6 @@
     </Compile>
     <Compile Include="View\wLoginAdmin.xaml.cs">
       <DependentUpon>wLoginAdmin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\wOrientationAdmin.xaml.cs">
-      <DependentUpon>wOrientationAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wStart.xaml.cs">
       <DependentUpon>wStart.xaml</DependentUpon>

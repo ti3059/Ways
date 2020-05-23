@@ -74,8 +74,8 @@ namespace Ways.Model
             s.connection.Open();
             string request = "UPDATE question_orientation SET job_index = @jobIndex WHERE id = @id)";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
-            cmd.Parameters.AddWithValue("@answer", answer);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             s.connection.Close();
         }

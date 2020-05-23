@@ -31,6 +31,7 @@ namespace Ways.View
         {
             InitializeComponent();
             TestOrientation = testOrientation;
+            SetQuestions();
         }
 
         public Test_Orientation TestOrientation { get => testOrientation; set => testOrientation = value; }
@@ -49,21 +50,32 @@ namespace Ways.View
         private void SelectAnswer(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
+            Answer_Orientation a = new Answer_Orientation();
             switch (button.Name)
             {
                 case "lAnswerOne":
-                    AnswerOrientationSelected = TestOrientation.CurrentQuestion.SelectQuestionsOrientation().[0];
+                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id)[0];
                     break;
                 case "lAnswerTwo":
-                    AnswerOrientationSelected = TestOrientation.CurrentQuestion.SelectQuestionsOrientation().[1];
+                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id)[1];
                     break;
                 case "lAnswerThree":
-                    AnswerOrientationSelected = TestOrientation.CurrentQuestion.SelectQuestionsOrientation().[2];
+                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id)[2];
                     break;
                 case "lAnswerFour":
-                    AnswerOrientationSelected = TestOrientation.CurrentQuestion.SelectQuestionsOrientation().[3];
+                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id)[3];
                     break;
             }
+        }
+
+        private void SetQuestions()
+        {
+            lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
+            lAnswerOne.Content = TestOrientation.CurrentQuestion.Question[0];
+            lAnswerTwo.Content = TestOrientation.CurrentQuestion.Question[1];
+            lAnswerThree.Content = TestOrientation.CurrentQuestion.Question[2];
+            lAnswerFour.Content = TestOrientation.CurrentQuestion.Question[3];
+
         }
     }
 }

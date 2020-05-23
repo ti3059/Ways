@@ -20,6 +20,7 @@ namespace Ways.Model
             Candidate = candidate;
             Questions_Orientation question_Orientation = new Questions_Orientation();
             Questions = question_Orientation.SelectQuestionsOrientation();
+            currentQuestion = Questions[0];
         }
 
         public Candidate Candidate { get => candidate; set => candidate = value; }
