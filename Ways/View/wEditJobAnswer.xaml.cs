@@ -47,6 +47,10 @@ namespace Ways.View
             answer.EditJobAnswerOrientation(lstAnswer[1].Id, cbAnswerJobTwo.SelectedIndex);
             answer.EditJobAnswerOrientation(lstAnswer[2].Id, cbAnswerJobThree.SelectedIndex);
             answer.EditJobAnswerOrientation(lstAnswer[3].Id, cbAnswerJobFour.SelectedIndex);
+            View.wAdminQuestion pg = new View.wAdminQuestion(message, questionSelected);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)

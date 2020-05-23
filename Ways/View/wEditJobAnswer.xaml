@@ -66,7 +66,7 @@
                         <ComboBox x:Name="cbAnswerJobFour" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Width="200" BorderBrush="White" Background="#00000000"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="Button_Click" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Height="48" Margin="0,30,0,0"/>
+                <Button Content="Valider" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Click="Button_Click" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Height="48" Margin="0,30,0,0"/>
             </StackPanel>
             <!--
             <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>

@@ -25,7 +25,6 @@ namespace Ways.View
         private Answer_Orientation answerOrientationSelected;
         private Test_Game testGame;
         private Answer_Game answerGameSelected;
-        
 
         public wQuestion()
         {
@@ -94,22 +93,35 @@ namespace Ways.View
             if(CurrentTest == "GAME")
             {
                 Answer_Game aG = new Answer_Game();
-                List<Answer_Game> lstAG = aG.SelectAnswerGameFromQuestionGameId(TestOrientation.CurrentQuestion.Id);
-                lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
+                List<Answer_Game> lstAG = aG.SelectAnswerGameFromQuestionGameId(testGame.CurrentQuestion.Id);
+                lQuestionSubject.Text = TestGame.CurrentQuestion.Question;
                 lAnswerOne.Content = lstAG[0].Text;
                 lAnswerTwo.Content = lstAG[1].Text;
                 lAnswerThree.Content = lstAG[2].Text;
                 lAnswerFour.Content = lstAG[3].Text;
+
+                labelIndicator.Content = TestGame.CurrentQuestion.Id++ + " / " + lstAG.Count;
+
             }
             else
             {
-                Answer_Orientation aOr= new Answer_Orientation();
+                Answer_Orientation aOr = new Answer_Orientation();
                 List<Answer_Orientation> lstOr = aOr.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id);
                 lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
                 lAnswerOne.Content = lstOr[0].Text;
                 lAnswerTwo.Content = lstOr[1].Text;
                 lAnswerThree.Content = lstOr[2].Text;
                 lAnswerFour.Content = lstOr[3].Text;
+                
+                for(int i = 0; i < TestOrientation.Questions.Count; i++)
+                {
+                    if(TestOrientation.Questions[i] == TestOrientation.CurrentQuestion)
+                    {
+                        int temp = i + 1;
+                        labelIndicator.Content = temp + " / " + TestOrientation.Questions.Count;
+                    }
+                }
+
             }
 
         }

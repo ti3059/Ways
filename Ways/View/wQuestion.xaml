@@ -21,7 +21,7 @@
             </Rectangle>
             <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2"/>
             <StackPanel HorizontalAlignment="Left" Height="399" Margin="15,10,0,0" VerticalAlignment="Top" Width="767">
-                <Label Content="n/x" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
+                <Label x:Name="labelIndicator" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="14"/>
                 <TextBlock x:Name="lQuestionSubject" HorizontalAlignment="Center" Margin="20,40,20,0" TextWrapping="Wrap" Text="Sujet de la question" VerticalAlignment="Top" Width="727" Height="20" Foreground="White" FontSize="14" TextAlignment="Center"/>
                 <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
