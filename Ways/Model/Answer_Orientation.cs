@@ -62,9 +62,10 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_orientation SET reponse_orientation = @answer, WHERE id = @id)";
+            string request = "UPDATE reponses_orientation SET reponse = @answer WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@answer", answer);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
             s.connection.Close();
         }
@@ -72,7 +73,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE question_orientation SET job_index = @jobIndex WHERE id = @id)";
+            string request = "UPDATE reponses_orientation SET job_index = @jobIndex WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@jobIndex", jobIndex);
             cmd.Parameters.AddWithValue("@id", id);

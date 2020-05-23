@@ -43,6 +43,7 @@ namespace Ways.Model
 		public void UpPoints()
 		{
 			Point ++;
+			
 		} 
 	}
 }

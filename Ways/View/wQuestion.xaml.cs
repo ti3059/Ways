@@ -25,6 +25,7 @@ namespace Ways.View
         private Answer_Orientation answerOrientationSelected;
         private Test_Game testGame;
         private Answer_Game answerGameSelected;
+        
 
         public wQuestion()
         {
@@ -32,14 +33,14 @@ namespace Ways.View
         }
         public wQuestion(Test_Orientation testOrientation) : this()
         {
-            CurrentTest = "Orientation";
+            CurrentTest = "ORIENTATION";
             TestOrientation = testOrientation;
             SetQuestions();
         }
 
         public wQuestion(Test_Game testGame) : this()
         {
-            CurrentTest = "Game";
+            CurrentTest = "GAME";
             TestGame = testGame;
             SetQuestions();
         }
@@ -90,11 +91,27 @@ namespace Ways.View
 
         private void SetQuestions()
         {
-            lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
-            lAnswerOne.Content = TestOrientation.CurrentQuestion.Question[0];
-            lAnswerTwo.Content = TestOrientation.CurrentQuestion.Question[1];
-            lAnswerThree.Content = TestOrientation.CurrentQuestion.Question[2];
-            lAnswerFour.Content = TestOrientation.CurrentQuestion.Question[3];
+            if(CurrentTest == "GAME")
+            {
+                Answer_Game aG = new Answer_Game();
+                List<Answer_Game> lstAG = aG.SelectAnswerGameFromQuestionGameId(TestOrientation.CurrentQuestion.Id);
+                lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
+                lAnswerOne.Content = lstAG[0].Text;
+                lAnswerTwo.Content = lstAG[1].Text;
+                lAnswerThree.Content = lstAG[2].Text;
+                lAnswerFour.Content = lstAG[3].Text;
+            }
+            else
+            {
+                Answer_Orientation aOr= new Answer_Orientation();
+                List<Answer_Orientation> lstOr = aOr.SelectAnswerOrientationFromQuestionOrientationId(TestOrientation.CurrentQuestion.Id);
+                lQuestionSubject.Text = TestOrientation.CurrentQuestion.Question;
+                lAnswerOne.Content = lstOr[0].Text;
+                lAnswerTwo.Content = lstOr[1].Text;
+                lAnswerThree.Content = lstOr[2].Text;
+                lAnswerFour.Content = lstOr[3].Text;
+            }
+
         }
     }
 }
