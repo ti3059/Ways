@@ -52,7 +52,7 @@ namespace Ways.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if(CurrentTest == "Orientation")
+            if(CurrentTest == "ORIENTATION")
             {
                 TestOrientation.Reply(AnswerOrientationSelected.JobIndex);
             }
