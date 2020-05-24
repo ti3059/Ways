@@ -25,25 +25,24 @@
                     <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
                         <TextBlock x:Name="lQuestionSubject" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" Text="Renseignez vos amis pour gagner des points !" VerticalAlignment="Center" Foreground="White" FontSize="18"/>
                         <Grid HorizontalAlignment="Center" Margin="21,10,21,0" VerticalAlignment="Center" Width="220">
-                            <TextBox x:Name="tbMailOne" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple1@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
+                            <TextBox x:Name="tbMailOne" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White" TextChanged="tbMailOne_TextChanged"/>
                             <Label Content="+1 point" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Foreground="White"/>
                         </Grid>
                         <Grid HorizontalAlignment="Center" Margin="21,10,21,0" VerticalAlignment="Center" Width="220">
-                            <TextBox x:Name="tbMailTwo" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple2@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
+                            <TextBox x:Name="tbMailTwo" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
                             <Label Content="+2 points" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Foreground="White"/>
                         </Grid>
                         <Grid HorizontalAlignment="Center" Margin="21,10,21,0" VerticalAlignment="Center" Width="220">
-                            <TextBox x:Name="tbMailThree" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple3@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
+                            <TextBox x:Name="tbMailThree" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
                             <Label Content="+3 points" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Foreground="White"/>
                         </Grid>
                         <Grid HorizontalAlignment="Center" Margin="21,10" VerticalAlignment="Center" Width="220">
-                            <TextBox x:Name="tbMailFour" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple4@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
-                            <Label Content="+4 points" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBox x:Name="tbMailFour" HorizontalAlignment="Left" Height="23" Margin="0" TextWrapping="Wrap" Text="Exemple@mail.fr" VerticalAlignment="Center" Width="150" Background="Transparent" Foreground="White" BorderBrush="White"/>
+                            <Label x:Name="bValidate" Content="+4 points" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Center" Foreground="White"/>
                         </Grid>
-                        <Button Content="Valider" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Center" Width="150" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" FontSize="18" Height="50"/>
+                        <Button Content="Valider" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Center" Width="150" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" FontSize="18" Height="50" Click="Button_Click"/>
                     </StackPanel>
                 </Grid>
-                <Grid HorizontalAlignment="Left" Height="52" Margin="10,332,0,0" VerticalAlignment="Top" Width="747"/>
             </Grid>
             <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="#FF00B9FF"/>
             <!--

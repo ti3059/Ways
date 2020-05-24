@@ -27,7 +27,7 @@ namespace Ways.Model
 		private List<string> _lstInfoCandidate;
 		private List<Candidate> lstCandidate = new List<Candidate>();
 
-
+		private bool contact = false;
 
 
 		private List<int> orientationPoints = new List<int>(); //tableau parallèle aux métiers contenant à la même index le nombre de points du métier
@@ -65,9 +65,10 @@ namespace Ways.Model
 		public Test_Orientation Test_Orientation { get => _test_Orientation; set => _test_Orientation = value; }
         public Test_Game Test_Game { get => _test_Game; set => _test_Game = value; }
         public int Id { get => _id; set => _id = value; }
-        public List<Candidate> LstCandidate { get => lstCandidate; set => lstCandidate = value; }
+		public List<Candidate> LstCandidate { get => lstCandidate; set => lstCandidate = value; }
+		public bool Contact { get => contact; set => contact = value; }
 
-        public void UpOrientation(int jobIndex)
+		public void UpOrientation(int jobIndex)
 		{
 			OrientationPoints[jobIndex]++;
 		}
@@ -154,6 +155,30 @@ namespace Ways.Model
 		{
 			Candidate candidate = new Candidate(score, surname);
 			return candidate;
+		}
+
+		public void SetContacts(List<string> contacts)
+		{
+			Server s = new Server();
+			s.connection.Open();
+			foreach (string contact in contacts)
+			{
+				string requestContact = "INSERT INTO contact(mail) VALUES (@mail)";
+				MySqlCommand cmd1 = new MySqlCommand(requestContact, s.connection);
+				cmd1.Parameters.AddWithValue("@mail", contact);
+				cmd1.ExecuteNonQuery();
+				int id = (int)cmd1.LastInsertedId;
+
+				string requestContact = "INSERT INTO candidate_contact(id_candidate, id_contact) VALUES (@id_candidate, @id_contact)";
+				MySqlCommand cmd2 = new MySqlCommand(requestContact, s.connection);
+				cmd2.Parameters.AddWithValue("@id_candidate", Id);
+				cmd2.Parameters.AddWithValue("@id_contact", id);
+				cmd2.ExecuteNonQuery();
+
+				UpPoints();
+			}
+			s.connection.Close();
+			Contact = true;
 		}
 	}
 }

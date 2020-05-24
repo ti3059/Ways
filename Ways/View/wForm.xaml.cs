@@ -19,10 +19,45 @@ namespace Ways.View
     /// </summary>
     public partial class wForm : Window
     {
-        public wForm()
+        private Candidate candidate;
+        public wForm(Candidate candidate)
         {
             InitializeComponent();
+            Candidate = candidate;
+            Candidate.
+            if(Candidate.Contact)
+            {
+                bValidate.IsEnabled = false;
+            }
+        }
+        public Candidate Candidate { get => candidate; set => candidate = value; }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<String> contactList = new List<string>();
+            if (tbMailOne.Text != "Exemple@mail.fr" && tbMailOne.Text != "")
+            {
+                contactList.Add(tbMailOne.Text);
+            }
+            if (tbMailTwo.Text != "Exemple@mail.fr" && tbMailTwo.Text != "" && contactList.Contains(tbMailTwo.Text) != true)
+            {
+                contactList.Add(tbMailTwo.Text);
+            }
+            if (tbMailThree.Text != "Exemple@mail.fr" && tbMailThree.Text != "" && contactList.Contains(tbMailThree.Text) != true)
+            {
+                contactList.Add(tbMailThree.Text);
+            }
+            if (tbMailFour.Text != "Exemple@mail.fr" && tbMailFour.Text != "" && contactList.Contains(tbMailFour.Text) != true)
+            {
+                contactList.Add(tbMailFour.Text);
+            }
+            Candidate.SetContactes(contactList);
+            // pointe vers wScore
         }
 
+        private void tbMailOne_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -22,11 +22,13 @@ namespace Ways.View
     /// </summary>
     public partial class wScore : Window
     {
-        public wScore()
+        private Candidate candidate;
+        public wScore(Candidate candidate)
         {
             InitializeComponent();
             addCandidatesToListView();
         }
+        public Candidate Candidate { get => candidate; set => candidate = value; }
 
         public void addCandidatesToListView()
         {
@@ -42,7 +44,12 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
+            // doit pointer vers wTestMenu avec le candidat en paramètre
+        }
 
+        private void btnForm_Click(object sender, RoutedEventArgs e)
+        {
+            // doit pointer vers wForm avec le candidat en paramètre
         }
     }
 }
