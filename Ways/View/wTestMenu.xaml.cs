@@ -27,12 +27,31 @@ namespace Ways.View
             InitializeComponent();
             candidate = c;
             SetContentButton();
-            
         }
 
         private void bGame_Click(object sender, RoutedEventArgs e)
         {
-
+            if (candidate.Test_Game.CurrentQuestion == null)
+            {
+                if(candidate.Test_Orientation.CurrentQuestion == null)
+                {
+                    View.wScore pg = new View.wScore();
+                    pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                    pg.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Terminer le test d'orientation pour accéder au tableau des scores.");
+                }
+            }
+            else
+            {
+                View.wQuestion pg = new View.wQuestion(candidate, "GAME");
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
+            }
         }
 
         private void ClickOrientation(object sender, RoutedEventArgs e)
@@ -64,8 +83,23 @@ namespace Ways.View
             {
                 bOrientation.Content = "Test Orientation";
             }
+
+            if(candidate.Test_Game.CurrentQuestion == null)
+            {
+                bGame.Content = "Tableau des scores";
+            }
+            else
+            {
+                bGame.Content = "Jeu";
+            }
         }
 
-
+        private void bDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+            Ways.MainWindow pg = new Ways.MainWindow();
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
+        }
     }
 }

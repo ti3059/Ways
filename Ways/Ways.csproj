@@ -64,11 +64,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\wInfoCandidate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\wLoginCandidate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\wResultOrientationCandidate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\wScore.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,11 +140,17 @@
     <Compile Include="View\wForm.xaml.cs">
       <DependentUpon>wForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\wInfoCandidate.xaml.cs">
+      <DependentUpon>wInfoCandidate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\wLoginCandidate.xaml.cs">
       <DependentUpon>wLoginCandidate.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wResultOrientationCandidate.xaml.cs">
       <DependentUpon>wResultOrientationCandidate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wScore.xaml.cs">
+      <DependentUpon>wScore.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wTestMenu.xaml.cs">
       <DependentUpon>wTestMenu.xaml</DependentUpon>

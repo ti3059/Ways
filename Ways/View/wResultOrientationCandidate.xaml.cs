@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,6 +30,10 @@ namespace Ways.View
             SetJobs();
         }
 
+        public wResultOrientationCandidate()
+        {
+            InitializeComponent();
+        }
         public Candidate Candidate { get => candidate; set => candidate = value; }
 
         private void SetJobs()
@@ -44,9 +49,9 @@ namespace Ways.View
                     if (candidate.OrientationPoints[i] > maxValue)
                     {
                         j = lstCopyJobs[i];
+                        maxValue = candidate.OrientationPoints[i];
                     }
                 }
-
 
                 foreach (string t in j.Tasks)
                 {
@@ -79,7 +84,10 @@ namespace Ways.View
 
         private void bDeconnexion_Click(object sender, RoutedEventArgs e)
         {
-
+            View.wTestMenu pg = new View.wTestMenu(candidate);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
     }
 }

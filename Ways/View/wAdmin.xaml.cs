@@ -43,6 +43,7 @@ namespace Ways.View
             {
                 lvAdmin.Items.Add(q);
             }
+            lvAdmin.Items.RemoveAt(0);
         }
 
         public void addQuestionOrientationToListView()
@@ -52,6 +53,7 @@ namespace Ways.View
             {
                 lvAdmin.Items.Add(q);
             }
+            lvAdmin.Items.RemoveAt(0);
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)

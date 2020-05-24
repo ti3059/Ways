@@ -15,11 +15,12 @@ namespace Ways.Model
         private Questions_Game currentQuestion;
         private List<Questions_Game> questions;
 
-        public Test_Game()
+        public Test_Game(Candidate c)
         {
             Questions_Game question_Game = new Questions_Game();
             Questions = question_Game.SelectQuestionsGame();
             currentQuestion = Questions[0];
+            Candidate = c;
         }
 
         public Candidate Candidate { get => candidate; set => candidate = value; }
@@ -28,25 +29,25 @@ namespace Ways.Model
 
         public void Reply(bool answerSelected)
         {
-            if(answerSelected)
+            Candidate.UpPoints();
+            Questions_Game nextQuestionGame = new Questions_Game();
+
+            for (int i = 0; i < Questions.Count; i++)
             {
-                Candidate.UpPoints();
-            }
-            if(Questions[Questions.Count] != CurrentQuestion)
-            {
-                for (int i = 0; i <= Questions.Count; i++)
+                if (Questions[i] == CurrentQuestion)
                 {
-                    if (Questions[i] == CurrentQuestion)
+                    if (i < Questions.Count - 1)
                     {
-                        CurrentQuestion = Questions[i + 1];
+                        nextQuestionGame = Questions[i + 1];
+                    }
+                    else
+                    {
+                        nextQuestionGame = null;
                     }
                 }
-                //RECHARGEMENT DE LA PAGE AVEC LA NOUVELLE QUESTION
             }
-            else
-            {
-                //CHARGEMENT DU MENU ET FIN DU TEST
-            }
+
+            currentQuestion = nextQuestionGame;
         }
 
     }

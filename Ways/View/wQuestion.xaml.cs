@@ -70,7 +70,14 @@ namespace Ways.View
                 if (candidate.Test_Game.CurrentQuestion == null)
                 {
                     MessageBox.Show("Fin des questions");
-                    View.wTestMenu pg = new View.wTestMenu(candidate.Test_Game.Candidate);
+                    View.wInfoCandidate pg = new View.wInfoCandidate(candidate.Test_Game.Candidate);
+                    pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                    pg.Show();
+                    this.Close();
+                }
+                else
+                {
+                    View.wQuestion pg = new View.wQuestion(candidate, currentTest);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
@@ -79,30 +86,49 @@ namespace Ways.View
 
         }
 
-        private void bBack_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void SelectAnswer(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
-            Answer_Orientation a = new Answer_Orientation();
-            switch (button.Name)
+            Answer_Orientation aOr = new Answer_Orientation();
+            Answer_Game aGame = new Answer_Game();
+
+            if(currentTest == "GAME")
             {
-                case "lAnswerOne":
-                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[0];
-                    break;
-                case "lAnswerTwo":
-                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[1];
-                    break;
-                case "lAnswerThree":
-                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[2];
-                    break;
-                case "lAnswerFour":
-                    AnswerOrientationSelected = a.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[3];
-                    break;
+                switch (button.Name)
+                {
+                    case "lAnswerOne":
+                        answerGameSelected = aGame.SelectAnswerGameFromQuestionGameId(candidate.Test_Game.CurrentQuestion.Id)[0];
+                        break;
+                    case "lAnswerTwo":
+                        answerGameSelected = aGame.SelectAnswerGameFromQuestionGameId(candidate.Test_Game.CurrentQuestion.Id)[1];
+                        break;
+                    case "lAnswerThree":
+                        answerGameSelected = aGame.SelectAnswerGameFromQuestionGameId(candidate.Test_Game.CurrentQuestion.Id)[2];
+                        break;
+                    case "lAnswerFour":
+                        answerGameSelected = aGame.SelectAnswerGameFromQuestionGameId(candidate.Test_Game.CurrentQuestion.Id)[3];
+                        break;
+                }
             }
+            else
+            {
+                switch (button.Name)
+                {
+                    case "lAnswerOne":
+                        AnswerOrientationSelected = aOr.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[0];
+                        break;
+                    case "lAnswerTwo":
+                        AnswerOrientationSelected = aOr.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[1];
+                        break;
+                    case "lAnswerThree":
+                        AnswerOrientationSelected = aOr.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[2];
+                        break;
+                    case "lAnswerFour":
+                        AnswerOrientationSelected = aOr.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id)[3];
+                        break;
+                }
+            }
+
         }
 
         private void SetQuestions()
@@ -117,7 +143,14 @@ namespace Ways.View
                 lAnswerThree.Content = lstAG[2].Text;
                 lAnswerFour.Content = lstAG[3].Text;
 
-                labelIndicator.Content = candidate.Test_Game.CurrentQuestion.Id++ + " / " + lstAG.Count;
+                for (int i = 0; i < candidate.Test_Game.Questions.Count; i++)
+                {
+                    if (candidate.Test_Game.Questions[i] == candidate.Test_Game.CurrentQuestion)
+                    {
+                        int temp = i + 1;
+                        labelIndicator.Content = temp + " / " + candidate.Test_Game.Questions.Count;
+                    }
+                }
 
             }
             else
