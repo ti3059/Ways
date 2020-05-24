@@ -18,21 +18,24 @@
                 </Rectangle.Fill>
 
             </Rectangle>
-            <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2">
-                <Grid Height="224" Margin="119,103,119,0" Width="529" VerticalAlignment="Top">
-                    <Grid HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="212"/>
-                    <Grid HorizontalAlignment="Left" Height="192" Margin="307,10,0,0" VerticalAlignment="Top" Width="212"/>
-                </Grid>
-            </Grid>
-            <Label x:Name="labelNameJob1" Content="" HorizontalAlignment="Left" Margin="145,135,0,0" VerticalAlignment="Top" Width="107"/>
-            <Label x:Name="labelDesJob1" Content="" HorizontalAlignment="Left" Margin="338,135,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
-            <Label x:Name="labelTasksJob1" Content="" HorizontalAlignment="Left" Margin="581,133,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="labelNameJob2" Content="" HorizontalAlignment="Left" Margin="145,187,0,0" VerticalAlignment="Top" Width="107"/>
-            <Label x:Name="labelDesJob2" Content="" HorizontalAlignment="Left" Margin="338,184,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
-            <Label x:Name="labelTasksJob2" Content="" HorizontalAlignment="Left" Margin="581,184,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="labelNameJob3" Content="" HorizontalAlignment="Left" Margin="145,261,0,0" VerticalAlignment="Top" Width="107"/>
-            <Label x:Name="labelDesJob3" Content="" HorizontalAlignment="Left" Margin="338,258,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
-            <Label x:Name="labelTasksJob3" Content="" HorizontalAlignment="Left" Margin="581,258,0,0" VerticalAlignment="Top"/>
+            
+            <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="772" Background="Transparent" Orientation="Horizontal">
+                <StackPanel HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="220" Background="#00FFDFDF">
+                    <Label x:Name="labelNameJob1" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" BorderBrush="Black" Background="#00FF0000"/>
+                    <Label x:Name="labelDesJob1" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" Background="#00FF0000"/>
+                    <Label x:Name="labelTasksJob1" Content="" HorizontalAlignment="Center" Margin="0,10" VerticalAlignment="Top" Background="#00FF0000" Width="200"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Width="220" Background="#00FFDFDF">
+                    <Label x:Name="labelNameJob2" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Label x:Name="labelDesJob2" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200"/>
+                    <Label x:Name="labelTasksJob2" Content="" HorizontalAlignment="Center" Margin="0,10" VerticalAlignment="Top" Width="200"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Width="220" Background="#00FFDFDF">
+                    <Label x:Name="labelNameJob3" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" Background="#00000000"/>
+                    <Label x:Name="labelDesJob3" Content="" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="200" Background="#00FD1515"/>
+                    <Label x:Name="labelTasksJob3" Content="" HorizontalAlignment="Center" Margin="0,10" VerticalAlignment="Top" Width="200" Background="#00FF0000"/>
+                </StackPanel>
+            </StackPanel>
             <!--
             <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
