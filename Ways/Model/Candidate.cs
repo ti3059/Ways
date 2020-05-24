@@ -37,13 +37,12 @@ namespace Ways.Model
 
         public void UpOrientation(int jobIndex)
 		{
-			orientationPoints[jobIndex]++;
+			OrientationPoints[jobIndex]++;
 		}
 
 		public void UpPoints()
 		{
-			Point ++;
-			
+			Point ++;		
 		} 
 	}
 }
