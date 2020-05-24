@@ -82,7 +82,7 @@ namespace Ways.View
 
         }
 
-        private void bDeconnexion_Click(object sender, RoutedEventArgs e)
+        private void bBack_Click(object sender, RoutedEventArgs e)
         {
             View.wTestMenu pg = new View.wTestMenu(candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;

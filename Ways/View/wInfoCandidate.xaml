@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="wInfoCandidate" Height="450" Width="800">
     <Grid>
-        <Rectangle Height="469" VerticalAlignment="Top">
+        <Rectangle Height="817" VerticalAlignment="Top" Margin="0,0,0,-398">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#222831"></GradientStop>
@@ -31,10 +31,7 @@
             <StackPanel VerticalAlignment="Center" Margin="10,16" Grid.ColumnSpan="2"/>
         </Grid>
         <Label x:Name="lblError" Content="Login ou mot de passe incorrect, réessayez" Visibility="Hidden" Foreground="Red" HorizontalAlignment="Left" Margin="50,129,0,0" VerticalAlignment="Top" Width="240"/>
-        <Button x:Name="btnBack" Content="Retour" HorizontalAlignment="Left" Margin="33,30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <Label Content="Afin de valider votre score, veuillez renseigner des informations à votre sujet" HorizontalAlignment="Left" Margin="194,48,0,0" VerticalAlignment="Top"/>
-        <Label Content="3 : Quels domaines vous interessent?" HorizontalAlignment="Left" Margin="120,161,0,0" VerticalAlignment="Top" Width="195"/>
-        <Label Content="4 : Pour quelles raisons?" HorizontalAlignment="Left" Margin="136,192,0,0" VerticalAlignment="Top" Width="181"/>
+        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnBack_Click" Background="#00DDDDDD" BorderBrush="#FF00B9FF" Foreground="#FF00B9FF"/>
         <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="256,0,256,100">
             <StackPanel VerticalAlignment="Center" Margin="0,10"/>
         </Grid>
@@ -45,27 +42,50 @@
             </Grid.ColumnDefinitions>
             <StackPanel VerticalAlignment="Center" Margin="10,16" Grid.ColumnSpan="2"/>
         </Grid>
-        <Label Content="2 : Dans quel établissement ?" HorizontalAlignment="Left" Margin="134,129,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="1 : Quelle est votre formation ?" HorizontalAlignment="Left" Margin="134,95,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="4 : Pour quelles raisons ?" HorizontalAlignment="Left" Margin="136,223,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="5 : Avez-vous fait des stages dans ces domaines?" HorizontalAlignment="Left" Margin="136,254,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="6 : Si oui, quelles étaient vos missions ?" HorizontalAlignment="Left" Margin="136,285,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="7 : Si projet de reconvertion, quelles raisons vous encouragent à vous reconvertir ?" HorizontalAlignment="Left" Margin="136,319,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="8 : Avez-vous un projet pro établi ?" HorizontalAlignment="Left" Margin="136,359,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="9 : Pourquoi avez-vous choisi l'alternance ?" HorizontalAlignment="Left" Margin="134,383,0,0" VerticalAlignment="Top" Width="181"/>
-        <Label Content="10 : Comment avez-vous connu CESI ?" HorizontalAlignment="Left" Margin="500,103,0,0" VerticalAlignment="Top" Width="181"/>
-        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="23" Margin="335,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="23" Margin="335,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb3" HorizontalAlignment="Left" Height="23" Margin="335,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb4" HorizontalAlignment="Left" Height="23" Margin="335,196,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb5" HorizontalAlignment="Left" Height="23" Margin="335,227,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb6" HorizontalAlignment="Left" Height="23" Margin="335,258,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb7" HorizontalAlignment="Left" Height="23" Margin="335,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb8" HorizontalAlignment="Left" Height="23" Margin="335,322,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb9" HorizontalAlignment="Left" Height="23" Margin="335,359,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="tb10" HorizontalAlignment="Left" Height="23" Margin="335,387,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="672,107,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnAdd" Content="Valider" HorizontalAlignment="Left" Margin="583,249,0,0" VerticalAlignment="Top" Width="75" Click="btnAdd_Click"/>
+        <StackPanel HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Background="#00FF0000" Width="720">
+            <Label Content="Afin de valider votre score, veuillez renseigner des informations à votre sujet" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Top" Foreground="White" FontSize="18"/>
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,-620,0" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="1 : Quelle est votre formation ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb1" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,-620,0" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="2 : Dans quel établissement ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb2" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Margin="0,0,-620,0" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="3 : Quel(s) domaine(s) vous intéresse(nt) ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb3" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="4 : Pour quelle(s) raison(s) êtes-vous intéressé par ce domaine ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb4" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="5 : Avez-vous fais des stages dans le domaine qui vous intéresse ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb5" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="6 : Si oui, quelles étaient vos missions ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb6" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="7 : Si projet de reconversion, quelle(s) raison(s) vous encourage(nt) ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb7" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="8 : Avez-vous un projet professionnel établi ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb8" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="9 : Pourquoi avez-vous choisi l'alternance ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb9" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFF7474" Width="720">
+                <Label Content="Comment avez-vous connu CESI ?" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="700" Foreground="White"/>
+                <TextBox x:Name="tb10" HorizontalAlignment="Center" Margin="0,0,0,10" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="700"/>
+            </StackPanel>
+            <Button x:Name="btnAdd" Content="Valider" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Click="btnAdd_Click" Height="50" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Margin="0,30,0,0"/>
+        </StackPanel>
 
 
 

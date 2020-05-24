@@ -19,10 +19,10 @@
 
             </Rectangle>
             <StackPanel HorizontalAlignment="Center" Height="399" Margin="0" VerticalAlignment="Center" Width="772">
-                <Button x:Name="bDeconnexion" Content="Déconnection" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="#00DDDDDD" Foreground="White" Click="bDeconnexion_Click"/>
+                <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="#FF00B9FF" Click="bBack_Click"/>
             </StackPanel>
             <Grid HorizontalAlignment="Center" Height="210" Margin="0,2,0,0" VerticalAlignment="Center" Width="500"/>
-            <ListView x:Name="lvCandidate" HorizontalAlignment="Center" Height="266" VerticalAlignment="Center" Width="724" Margin="0,30,0,0">
+            <ListView x:Name="lvCandidate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="724" Margin="0">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Nom du joueur" Width="350"/>

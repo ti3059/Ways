@@ -40,7 +40,7 @@ namespace Ways.View
             lvCandidate.Items.RemoveAt(0);
         }
 
-        private void bDeconnexion_Click(object sender, RoutedEventArgs e)
+        private void bBack_Click(object sender, RoutedEventArgs e)
         {
 
         }

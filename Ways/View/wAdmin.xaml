@@ -24,7 +24,7 @@
             </Rectangle>
             <StackPanel HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
                 <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="#FF00B9FF" Click="bBack_Click"/>
-                <ListView x:Name="lvAdmin" PreviewMouseLeftButtonUp="listView_Click" HorizontalAlignment="Center" Height="266" VerticalAlignment="Center" Width="724" Margin="0,30,0,0">
+                <ListView x:Name="lvAdmin" PreviewMouseLeftButtonUp="listView_Click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="724" Margin="0,30,0,0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Id}" Header="Question n°" Width="100"/>
@@ -40,7 +40,7 @@
                         </ListView.View>
                     </ListView>
                 </ListView>
-                <Button x:Name="btnAddQuestion" Content="Ajouter" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Click="btnAddQuestion_Click" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Height="48" Margin="0,30,0,0"/>
+                <Button x:Name="btnAddQuestion" Content="Ajouter" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="150" Click="btnAddQuestion_Click" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Height="50" Margin="0,30,0,0"/>
             </StackPanel>
 
         </Grid>

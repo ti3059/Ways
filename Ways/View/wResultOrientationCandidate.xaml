@@ -41,6 +41,6 @@
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
             -->
         </Grid>
-        <Button x:Name="bDeconnexion" Content="Déconnection" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="Red" Background="#00FF0000" Foreground="White" Click="bDeconnexion_Click"/>
+        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00FF0000" Foreground="White" Click="bBack_Click"/>
     </Grid>
 </Window>

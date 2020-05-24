@@ -20,11 +20,11 @@
 
             </Rectangle>
             <StackPanel HorizontalAlignment="Center" Height="399" Margin="0" VerticalAlignment="Center" Width="772">
-                <Button x:Name="bDeconnexion" Content="Déconnection" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="#00DDDDDD" Foreground="White" Click="bDeconnexion_Click"/>
+                <Button x:Name="bDeconnexion" Content="Déconnection" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="Red" Background="#00DDDDDD" Foreground="Red" Click="bDeconnexion_Click"/>
             </StackPanel>
             <Grid HorizontalAlignment="Center" Height="210" Margin="0,2,0,0" VerticalAlignment="Center" Width="500">
-                <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="18" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="0" Click="btnGameManage_Click" Height="200" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="18" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="0" Click="btnOrientationManage_Click" Height="200" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="#FF00B9FF" FontSize="18" Background="Transparent" Foreground="#FF00B9FF" Content="Gestion du jeu"  Margin="0" Click="btnGameManage_Click" Height="200" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="#FF00B9FF" FontSize="18" Background="Transparent" Foreground="#FF00B9FF" Content="Gestion de l'orientation"  Margin="0" Click="btnOrientationManage_Click" Height="200" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
 
         </Grid>

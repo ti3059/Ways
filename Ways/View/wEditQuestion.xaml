@@ -43,12 +43,12 @@
                     </Grid>
                 </Grid>
             </Grid>
-            <Button x:Name="btnAdd" Content="Valider" Click="btnAdd_Click" HorizontalAlignment="Left" Margin="338,349,0,0" VerticalAlignment="Top" Width="112" Height="33"/>
+            <Button x:Name="btnAdd" Content="Valider" Click="btnAdd_Click" HorizontalAlignment="Center" Margin="0,0,0,20" VerticalAlignment="Bottom" Width="150" Height="50"/>
             <!--
             <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
             <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
             -->
         </Grid>
-        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="White" Click="bBack_Click"/>
+        <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="#FF00B9FF" Click="bBack_Click"/>
     </Grid>
 </Window>
