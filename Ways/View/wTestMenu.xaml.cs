@@ -26,20 +26,44 @@ namespace Ways.View
         {
             InitializeComponent();
             candidate = c;
-        }
-
-        private void bOrientation_Click(object sender, RoutedEventArgs e)
-        {
-            Test_Orientation test_Orientation = new Test_Orientation(candidate);
-            View.wQuestion pg = new View.wQuestion(test_Orientation);
-            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            pg.Show();
-            this.Close();
+            SetContentButton();
+            
         }
 
         private void bGame_Click(object sender, RoutedEventArgs e)
         {
-            //Test_Game ...
+
         }
+
+        private void ClickOrientation(object sender, RoutedEventArgs e)
+        {
+            if(candidate.Test_Orientation.CurrentQuestion == null)
+            {
+                //End game
+                MessageBox.Show("Fin du jeu");
+            }
+            else
+            {
+                View.wQuestion pg = new View.wQuestion(candidate, "ORIENTATION");
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
+            }
+
+        }
+
+        private void SetContentButton()
+        {
+            if(candidate.Test_Orientation.CurrentQuestion == null)
+            {
+                bOrientation.Content = "Résultat du test l'orientation";
+            }
+            else
+            {
+                bOrientation.Content = "Test Orientation";
+            }
+        }
+
+
     }
 }

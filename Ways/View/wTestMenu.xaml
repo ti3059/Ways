@@ -22,7 +22,7 @@
             <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2">
                 <Grid Height="224" Margin="119,103,119,0" Width="529" VerticalAlignment="Top">
                     <Grid HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="212">
-                        <Button x:Name="bOrientation" Content="Test d'orientation" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="196" BorderBrush="#FF00F3FF" Foreground="#FF00B9FF" Background="#0000B9FF" Height="172" Click="bOrientation_Click"/>
+                        <Button x:Name="bOrientation" Content="" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="196" BorderBrush="#FF00F3FF" Foreground="#FF00B9FF" Background="#0000B9FF" Height="172" Click="ClickOrientation"/>
                     </Grid>
                     <Grid HorizontalAlignment="Left" Height="192" Margin="307,10,0,0" VerticalAlignment="Top" Width="212">
                         <Button x:Name="bGame" Content="Jeu" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" Width="196" BorderBrush="#FF00F3FF" Foreground="#FF00B9FF" Background="#0000B9FF" Height="172" Click="bGame_Click"/>

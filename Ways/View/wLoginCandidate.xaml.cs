@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ways.ViewModel;
 
 namespace Ways.View
 {
@@ -26,7 +27,7 @@ namespace Ways.View
 
         private void btnCandidate_Click(object sender, RoutedEventArgs e)
         {
-            Model.Candidate c = new Model.Candidate();
+            Model.Candidate c = new Model.Candidate(vmStart.lstjobs);
             c.Surname = tbLogin.Text;
             View.wTestMenu pg = new View.wTestMenu(c);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;

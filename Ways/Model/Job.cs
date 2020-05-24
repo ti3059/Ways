@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ways.Model
 {
-    class Job
+    public class Job
     {
         private string name;
         private string des;

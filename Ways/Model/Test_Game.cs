@@ -15,9 +15,8 @@ namespace Ways.Model
         private Questions_Game currentQuestion;
         private List<Questions_Game> questions;
 
-        public Test_Game(Candidate candidate)
+        public Test_Game()
         {
-            Candidate = candidate;
             Questions_Game question_Game = new Questions_Game();
             Questions = question_Game.SelectQuestionsGame();
             currentQuestion = Questions[0];
