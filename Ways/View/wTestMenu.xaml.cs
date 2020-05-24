@@ -39,8 +39,10 @@ namespace Ways.View
         {
             if(candidate.Test_Orientation.CurrentQuestion == null)
             {
-                //End game
-                MessageBox.Show("Fin du jeu");
+                View.wResultOrientationCandidate pg = new View.wResultOrientationCandidate(candidate);
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
             }
             else
             {
@@ -56,7 +58,7 @@ namespace Ways.View
         {
             if(candidate.Test_Orientation.CurrentQuestion == null)
             {
-                bOrientation.Content = "Résultat du test l'orientation";
+                bOrientation.Content = "Résultat du test d'orientation";
             }
             else
             {

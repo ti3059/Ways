@@ -1,0 +1,43 @@
+﻿<Window x:Class="Ways.View.wResultOrientationCandidate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ways.View"
+        mc:Ignorable="d"
+        Title="Page résultat de l'orientation" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Rectangle Height="469" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#222831"></GradientStop>
+                        <GradientStop Color="#3282b8" Offset="1"></GradientStop>
+                        <GradientStop Color="#0f4c75" Offset="0.5"></GradientStop>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+
+            </Rectangle>
+            <Grid HorizontalAlignment="Center" Height="394" Margin="15,15,10,10" VerticalAlignment="Center" Width="767" Grid.Row="2">
+                <Grid Height="224" Margin="119,103,119,0" Width="529" VerticalAlignment="Top">
+                    <Grid HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="212"/>
+                    <Grid HorizontalAlignment="Left" Height="192" Margin="307,10,0,0" VerticalAlignment="Top" Width="212"/>
+                </Grid>
+            </Grid>
+            <Label x:Name="labelNameJob1" Content="" HorizontalAlignment="Left" Margin="145,135,0,0" VerticalAlignment="Top" Width="107"/>
+            <Label x:Name="labelDesJob1" Content="" HorizontalAlignment="Left" Margin="338,135,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
+            <Label x:Name="labelTasksJob1" Content="" HorizontalAlignment="Left" Margin="581,133,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelNameJob2" Content="" HorizontalAlignment="Left" Margin="145,187,0,0" VerticalAlignment="Top" Width="107"/>
+            <Label x:Name="labelDesJob2" Content="" HorizontalAlignment="Left" Margin="338,184,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
+            <Label x:Name="labelTasksJob2" Content="" HorizontalAlignment="Left" Margin="581,184,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="labelNameJob3" Content="" HorizontalAlignment="Left" Margin="145,261,0,0" VerticalAlignment="Top" Width="107"/>
+            <Label x:Name="labelDesJob3" Content="" HorizontalAlignment="Left" Margin="338,258,0,0" VerticalAlignment="Top" Height="29" Width="114"/>
+            <Label x:Name="labelTasksJob3" Content="" HorizontalAlignment="Left" Margin="581,258,0,0" VerticalAlignment="Top"/>
+            <!--
+            <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion du jeu"  Margin="68,154,437,137" Click="btnGameManage_Click"/>
+            <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Gestion de l'orientation"  Margin="436,154,69,137" Click="btnOrientationManage_Click"/>
+            -->
+        </Grid>
+        <Button x:Name="bDeconnexion" Content="Déconnection" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" BorderBrush="Red" Background="#00FF0000" Foreground="White" Click="bDeconnexion_Click"/>
+    </Grid>
+</Window>

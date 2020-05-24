@@ -56,6 +56,13 @@ namespace Ways.View
                     pg.Show();
                     this.Close();
                 }
+                else
+                {
+                    View.wQuestion pg = new View.wQuestion(candidate, currentTest);
+                    pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                    pg.Show();
+                    this.Close();
+                }
             }
             else
             {
@@ -104,7 +111,7 @@ namespace Ways.View
             {
                 Answer_Game aG = new Answer_Game();
                 List<Answer_Game> lstAG = aG.SelectAnswerGameFromQuestionGameId(candidate.Test_Game.CurrentQuestion.Id);
-                lQuestionSubject.Text = candidate.Test_Game.CurrentQuestion.Question;
+                lQuestionSubject.Text = "Question : " + candidate.Test_Game.CurrentQuestion.Question;
                 lAnswerOne.Content = lstAG[0].Text;
                 lAnswerTwo.Content = lstAG[1].Text;
                 lAnswerThree.Content = lstAG[2].Text;
@@ -117,7 +124,7 @@ namespace Ways.View
             {
                 Answer_Orientation aOr = new Answer_Orientation();
                 List<Answer_Orientation> lstOr = aOr.SelectAnswerOrientationFromQuestionOrientationId(candidate.Test_Orientation.CurrentQuestion.Id);
-                lQuestionSubject.Text = candidate.Test_Orientation.CurrentQuestion.Question;
+                lQuestionSubject.Text = "Question : " + candidate.Test_Orientation.CurrentQuestion.Question;
                 lAnswerOne.Content = lstOr[0].Text;
                 lAnswerTwo.Content = lstOr[1].Text;
                 lAnswerThree.Content = lstOr[2].Text;

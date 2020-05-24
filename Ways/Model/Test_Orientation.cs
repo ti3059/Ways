@@ -33,21 +33,24 @@ namespace Ways.Model
         public void Reply(int jobIndex)
         {
             Candidate.UpOrientation(jobIndex);
-            if (Questions[Questions.Count - 1] != CurrentQuestion)
+            Questions_Orientation nextQuestionOrientation = new Questions_Orientation();
+
+            for (int i = 0; i < Questions.Count; i++)
             {
-                for (int i = 0; i <= Questions.Count; i++)
+                if (Questions[i] == CurrentQuestion)
                 {
-                    if (Questions[i] == CurrentQuestion)
+                    if(i < Questions.Count - 1)
                     {
-                        CurrentQuestion = Questions[i + 1];
+                        nextQuestionOrientation = Questions[i + 1];
+                    }
+                    else
+                    {
+                        nextQuestionOrientation = null;
                     }
                 }
-                
             }
-            else
-            {
-                CurrentQuestion = null;
-            }
+
+            currentQuestion = nextQuestionOrientation;
         }
 
     }
