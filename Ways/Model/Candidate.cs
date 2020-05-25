@@ -28,6 +28,7 @@ namespace Ways.Model
 		private List<Candidate> lstCandidate = new List<Candidate>();
 
 		private bool contact = false;
+		private bool info = false;
 
 
 		private List<int> orientationPoints = new List<int>(); //tableau parallèle aux métiers contenant à la même index le nombre de points du métier
@@ -67,8 +68,9 @@ namespace Ways.Model
         public int Id { get => _id; set => _id = value; }
 		public List<Candidate> LstCandidate { get => lstCandidate; set => lstCandidate = value; }
 		public bool Contact { get => contact; set => contact = value; }
+        public bool Info { get => info; set => info = value; }
 
-		public void UpOrientation(int jobIndex)
+        public void UpOrientation(int jobIndex)
 		{
 			OrientationPoints[jobIndex]++;
 		}
@@ -119,7 +121,7 @@ namespace Ways.Model
 			s.connection.Close();
 
 			Id = idCandidate;
-
+			Info = true;
 		}
 
 		public List<Candidate> SelectAllCandidates()
@@ -157,6 +159,18 @@ namespace Ways.Model
 			return candidate;
 		}
 
+		public void UpdatePoint()
+        {
+			Server s = new Server();
+			s.connection.Open();
+			string request = "UPDATE candidate SET score = @score WHERE id = @id";
+			MySqlCommand cmd = new MySqlCommand(request, s.connection);
+			cmd.Parameters.AddWithValue("@score", Point);
+			cmd.Parameters.AddWithValue("@id", Id);
+			cmd.ExecuteNonQuery();
+			s.connection.Close();
+		}
+
 		public void SetContacts(List<string> contacts)
 		{
 			Server s = new Server();
@@ -169,7 +183,7 @@ namespace Ways.Model
 				cmd1.ExecuteNonQuery();
 				int id = (int)cmd1.LastInsertedId;
 
-				string requestCandidateContact = "INSERT INTO candidate_contact(id_candidate, id_contact) VALUES (@id_candidate, @id_contact)";
+				string requestCandidateContact = "INSERT INTO candidat_contact(id_candidat, id_contact) VALUES (@id_candidate, @id_contact)";
 				MySqlCommand cmd2 = new MySqlCommand(requestCandidateContact, s.connection);
 				cmd2.Parameters.AddWithValue("@id_candidate", Id);
 				cmd2.Parameters.AddWithValue("@id_contact", id);
@@ -179,6 +193,7 @@ namespace Ways.Model
 			}
 			s.connection.Close();
 			Contact = true;
+			UpdatePoint();
 		}
 	}
 }

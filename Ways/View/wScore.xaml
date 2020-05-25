@@ -22,7 +22,7 @@
                 <Button x:Name="bBack" Content="Retour" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="#FF00B9FF" Background="#00DDDDDD" Foreground="#FF00B9FF" Click="bBack_Click"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="47,81,45,0" VerticalAlignment="Top" Width="700" Background="#00FF8E8E">
-                <ListView x:Name="lvCandidate" HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Margin="0">
+                <ListView x:Name="lvCandidate"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="700" Margin="0">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Nom du joueur" Width="340"/>

@@ -35,10 +35,21 @@ namespace Ways.View
             {
                 if(candidate.Test_Orientation.CurrentQuestion == null)
                 {
-                    View.wScore pg = new View.wScore(candidate);
-                    pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-                    pg.Show();
-                    this.Close();
+                    if (candidate.Info)
+                    {
+                        View.wScore pg = new View.wScore(candidate);
+                        pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                        pg.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        View.wInfoCandidate pg = new View.wInfoCandidate(candidate);
+                        pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                        pg.Show();
+                        this.Close();
+                    }
+
                 }
                 else
                 {

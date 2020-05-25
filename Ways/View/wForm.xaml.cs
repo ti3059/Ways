@@ -51,13 +51,33 @@ namespace Ways.View
             {
                 contactList.Add(tbMailFour.Text);
             }
-            Candidate.SetContacts(contactList);
-            // pointe vers wScore
+            try
+            {
+                Candidate.SetContacts(contactList);
+                MessageBox.Show("Score augmenté");
+                View.wScore pg = new View.wScore(candidate);
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
+                // pointe vers wScore
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la sauvegarde des contacts");
+            }
         }
 
         private void tbMailOne_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void bBack_Click(object sender, RoutedEventArgs e)
+        {
+            View.wScore pg = new View.wScore(candidate);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
     }
 }
