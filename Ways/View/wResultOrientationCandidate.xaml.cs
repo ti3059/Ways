@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Security.Policy;
 using System.Text;
@@ -93,6 +94,7 @@ namespace Ways.View
 
         private void btnReportInfo_Click(object sender, RoutedEventArgs e)
         {
+            
         }
     }
 }

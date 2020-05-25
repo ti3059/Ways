@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ways.View"
         mc:Ignorable="d"
-        Title="wInfoCandidate" Height="450" Width="800">
+        Title="Ways" Height="450" Width="800">
     <Grid>
         <Rectangle Height="817" VerticalAlignment="Top" Margin="0,0,0,-398">
             <Rectangle.Fill>

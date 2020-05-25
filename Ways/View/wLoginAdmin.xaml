@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ways.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="wLoginAdmin" Height="500" Width="350">
+        Title="Ways" Height="500" Width="350">
     <Grid>
         <Rectangle Height="469" VerticalAlignment="Top">
             <Rectangle.Fill>

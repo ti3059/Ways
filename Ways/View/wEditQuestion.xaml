@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ways.View"
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen"
-        Title="Question : Editer" Height="450" Width="800">
+        Title="Ways" Height="450" Width="800">
     <Grid>
         <Grid>
             <Rectangle Height="469" VerticalAlignment="Top">
