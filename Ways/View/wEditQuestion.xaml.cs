@@ -23,33 +23,33 @@ namespace Ways.View
     /// </summary>
     public partial class wEditQuestion : Window
     {
-        private string msg;
-        Questions_Game qGame;
+        private string currentTest;
+        Questions_Game questionGame;
         List<Answer_Game> listAnswerGame;
-        Questions_Orientation qOr;
+        Questions_Orientation questionOrientation;
         List<Answer_Orientation> listAnswerOrientation;
 
-        public wEditQuestion(string choice)
+        public wEditQuestion(string msg)
         {
             InitializeComponent();
-            msg = choice;
+            currentTest = msg;
         }
 
-        public wEditQuestion(string choice, Questions_Game q)
+        public wEditQuestion(string msg, Questions_Game currentQuestionGame)
         {
             InitializeComponent();
-            qGame = q;
-            msg = choice;
-            listAnswerGame = getAnswerByQuestionGameId(q.Id);
+            questionGame = currentQuestionGame;
+            currentTest = msg;
+            listAnswerGame = getAnswerByQuestionGameId(currentQuestionGame.Id);
             setAnswerTBByAnswerTextList( new List<string> { listAnswerGame[0].Text.ToString(), listAnswerGame[1].Text.ToString(), listAnswerGame[2].Text.ToString(), listAnswerGame[3].Text.ToString() });
-            tbQuestion.Text = q.Question;
+            tbQuestion.Text = currentQuestionGame.Question;
         }
 
-        public wEditQuestion(string choice, Questions_Orientation q)
+        public wEditQuestion(string msg, Questions_Orientation q)
         {
             InitializeComponent();
-            qOr = q;
-            msg = choice;
+            questionOrientation = q;
+            currentTest = msg;
             listAnswerOrientation = getAnswerByQuestionOrientationId(q.Id);
             List<string> listAnswer = new List<string>();
             setAnswerTBByAnswerTextList(new List<string> { listAnswerOrientation[0].Text.ToString(), listAnswerOrientation[1].Text.ToString(), listAnswerOrientation[2].Text.ToString(), listAnswerOrientation[3].Text.ToString() });
@@ -58,7 +58,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdmin pg = new View.wAdmin(msg);
+            View.wAdmin pg = new View.wAdmin(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -66,19 +66,19 @@ namespace Ways.View
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if(msg == "GAME")
+            if(currentTest == "GAME")
             {
-                if (qGame != null)
+                if (questionGame != null)
                 {
                     try
                     {
-                        Questions_Game questionGame = new Questions_Game();
-                        questionGame.EditQuestionGame(qGame.Id, tbQuestion.Text.ToString());
-                        Answer_Game answerGame = new Answer_Game();
-                        answerGame.EditTextAnswerGame(listAnswerGame[0].Id, tbAnswerOne.Text.ToString());
-                        answerGame.EditTextAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString());
-                        answerGame.EditTextAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString());
-                        answerGame.EditTextAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString());
+                        Questions_Game editQuestionGame = new Questions_Game();
+                        editQuestionGame.EditQuestionGame(questionGame.Id, tbQuestion.Text.ToString());
+                        Answer_Game editAnswerGame = new Answer_Game();
+                        editAnswerGame.EditTextAnswerGame(listAnswerGame[0].Id, tbAnswerOne.Text.ToString());
+                        editAnswerGame.EditTextAnswerGame(listAnswerGame[1].Id, tbAnswerTwo.Text.ToString());
+                        editAnswerGame.EditTextAnswerGame(listAnswerGame[2].Id, tbAnswerThree.Text.ToString());
+                        editAnswerGame.EditTextAnswerGame(listAnswerGame[3].Id, tbAnswerFour.Text.ToString());
                         MessageBox.Show("Modification effectué avec succès");
                     }
                     catch(Exception ex)
@@ -91,13 +91,13 @@ namespace Ways.View
                 {
                     try
                     {
-                        Questions_Game questionGame = new Questions_Game();
-                        long id = questionGame.AddQuestionGame(tbQuestion.Text.ToString());
-                        Answer_Game answerGame = new Answer_Game();
-                        answerGame.AddAnswerGame(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), true);
-                        answerGame.AddAnswerGame(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), true);
-                        answerGame.AddAnswerGame(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), true);
-                        answerGame.AddAnswerGame(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), true);
+                        Questions_Game addQuestionGame = new Questions_Game();
+                        long id = addQuestionGame.AddQuestionGame(tbQuestion.Text.ToString());
+                        Answer_Game addAnswerGame = new Answer_Game();
+                        addAnswerGame.AddAnswerGame(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), true);
+                        addAnswerGame.AddAnswerGame(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), true);
+                        addAnswerGame.AddAnswerGame(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), true);
+                        addAnswerGame.AddAnswerGame(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), true);
                         MessageBox.Show("Ajout effectué avec succès");
                     }
                     catch(Exception ex)
@@ -109,17 +109,17 @@ namespace Ways.View
             }
             else
             {
-                if (qOr != null)
+                if (questionOrientation != null)
                 {
                     try
                     {
-                        Questions_Orientation questionOrientation = new Questions_Orientation();
-                        questionOrientation.EditQuestionOrientation(qGame.Id, tbQuestion.Text.ToString());
-                        Answer_Orientation answerOrientation = new Answer_Orientation();
-                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString());
-                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString());
-                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString());
-                        answerOrientation.EditTextAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString());
+                        Questions_Orientation editQuestionOrientation = new Questions_Orientation();
+                        editQuestionOrientation.EditQuestionOrientation(questionGame.Id, tbQuestion.Text.ToString());
+                        Answer_Orientation editAnswerOrientation = new Answer_Orientation();
+                        editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString());
+                        editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString());
+                        editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[2].Id, tbAnswerThree.Text.ToString());
+                        editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[3].Id, tbAnswerFour.Text.ToString());
                         MessageBox.Show("Modification effectué avec succès");
                     }
                     catch
@@ -132,13 +132,13 @@ namespace Ways.View
                 {
                     try
                     {
-                        Questions_Orientation questionOrientation = new Questions_Orientation();
-                        long id = questionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
-                        Answer_Orientation answerOrientation = new Answer_Orientation();
-                        answerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), 1);
-                        answerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), 2);
-                        answerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), 3);
-                        answerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), 4);
+                        Questions_Orientation addQuestionOrientation = new Questions_Orientation();
+                        long id = addQuestionOrientation.AddQuestionOrientation(tbQuestion.Text.ToString());
+                        Answer_Orientation addAnswerOrientation = new Answer_Orientation();
+                        addAnswerOrientation.AddAnswerOrientation(tbAnswerOne.Text.ToString(), Convert.ToInt32(id), 1);
+                        addAnswerOrientation.AddAnswerOrientation(tbAnswerTwo.Text.ToString(), Convert.ToInt32(id), 2);
+                        addAnswerOrientation.AddAnswerOrientation(tbAnswerThree.Text.ToString(), Convert.ToInt32(id), 3);
+                        addAnswerOrientation.AddAnswerOrientation(tbAnswerFour.Text.ToString(), Convert.ToInt32(id), 4);
                         MessageBox.Show("Ajout effectué avec succès");
                     }
                     catch
@@ -147,21 +147,21 @@ namespace Ways.View
                     }
                 }
             }
-            wAdmin wChoiceMenuAdmin = new wAdmin(msg);
-            wChoiceMenuAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            wChoiceMenuAdmin.Show();
+            wAdmin pg = new wAdmin(currentTest);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
             this.Close();
         }
 
         public List<Answer_Game> getAnswerByQuestionGameId(int questionGameId)
         {
-            Answer_Game answerGame = new Answer_Game();
-            return answerGame.SelectAnswerGameFromQuestionGameId(questionGameId);
+            Answer_Game getAnswerGame = new Answer_Game();
+            return getAnswerGame.SelectAnswerGameFromQuestionGameId(questionGameId);
         }
         public List<Answer_Orientation> getAnswerByQuestionOrientationId(int questionOrientationId)
         {
-            Answer_Orientation answerOrientation = new Answer_Orientation();
-            return answerOrientation.SelectAnswerOrientationFromQuestionOrientationId(questionOrientationId);
+            Answer_Orientation getAnswerOrientation = new Answer_Orientation();
+            return getAnswerOrientation.SelectAnswerOrientationFromQuestionOrientationId(questionOrientationId);
         }
         public void setAnswerTBByAnswerTextList(List<String> answerTextList)
         {

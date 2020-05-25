@@ -11,10 +11,10 @@ namespace Ways.Model
 {
     public class Answer_Game
     {
-        private int _id;
-        private int _questionId;
-        private string _text;
-        private bool _right;
+        private int id;
+        private int questionId;
+        private string text;
+        private bool right;
 
         public Answer_Game(int id, int questionId, string text, bool right)
         {
@@ -29,10 +29,10 @@ namespace Ways.Model
 
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public int QuestionId { get => _questionId; set => _questionId = value; }
-        public string Text { get => _text; set => _text = value; }
-        public bool Right { get => _right; set => _right = value; }
+        public int Id { get => id; set => id = value; }
+        public int QuestionId { get => questionId; set => questionId = value; }
+        public string Text { get => text; set => text = value; }
+        public bool Right { get => right; set => right = value; }
 
         public void AddAnswerGame(string answer, int id, bool right)
         {

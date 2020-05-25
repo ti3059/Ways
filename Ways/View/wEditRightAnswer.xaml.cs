@@ -22,16 +22,16 @@ namespace Ways.View
     {
         private Questions_Game questionSelected;
         private List<Answer_Game> lstAnswer = new List<Answer_Game>();
-        private string message;
+        private string currentTest;
 
 
-        public wEditRightAnswer(Questions_Game question, string msg)
+        public wEditRightAnswer(Questions_Game currentQuestionGame, string msg)
         {
             InitializeComponent();
-            questionSelected = question;
-            message = msg;
-            Answer_Game answer_Game = new Answer_Game();
-            lstAnswer = answer_Game.SelectAnswerGameFromQuestionGameId(questionSelected.Id);
+            questionSelected = currentQuestionGame;
+            currentTest = msg;
+            Answer_Game newAnswerGame = new Answer_Game();
+            lstAnswer = newAnswerGame.SelectAnswerGameFromQuestionGameId(questionSelected.Id);
             setAnswers();
         }
 
@@ -40,11 +40,11 @@ namespace Ways.View
         {
             try
             {
-                Answer_Game answer = new Answer_Game();
-                answer.EditRightAnswerGame(lstAnswer[0].Id, (bool)chbAnswerOne.IsChecked);
-                answer.EditRightAnswerGame(lstAnswer[1].Id, (bool)chbAnswerTwo.IsChecked);
-                answer.EditRightAnswerGame(lstAnswer[2].Id, (bool)chbAnswerThree.IsChecked);
-                answer.EditRightAnswerGame(lstAnswer[3].Id, (bool)chbAnswerFour.IsChecked);
+                Answer_Game editAnswerGame = new Answer_Game();
+                editAnswerGame.EditRightAnswerGame(lstAnswer[0].Id, (bool)chbAnswerOne.IsChecked);
+                editAnswerGame.EditRightAnswerGame(lstAnswer[1].Id, (bool)chbAnswerTwo.IsChecked);
+                editAnswerGame.EditRightAnswerGame(lstAnswer[2].Id, (bool)chbAnswerThree.IsChecked);
+                editAnswerGame.EditRightAnswerGame(lstAnswer[3].Id, (bool)chbAnswerFour.IsChecked);
                 MessageBox.Show("Modification effectuée");
 
             }
@@ -52,7 +52,7 @@ namespace Ways.View
             {
                 MessageBox.Show("Erreur lors de la modification de la question");   
             }
-            View.wAdminQuestion pg = new View.wAdminQuestion(message, questionSelected);
+            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -75,7 +75,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdminQuestion pg = new View.wAdminQuestion(message);
+            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

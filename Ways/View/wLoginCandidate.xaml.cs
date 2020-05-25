@@ -33,9 +33,9 @@ namespace Ways.View
             }
             else
             {
-                Model.Candidate c = new Model.Candidate(vmStart.lstjobs);
-                c.Surname = tbLogin.Text;
-                View.wTestMenu pg = new View.wTestMenu(c);
+                Model.Candidate candidate = new Model.Candidate(vmStart.lstjobs);
+                candidate.Surname = tbLogin.Text;
+                View.wTestMenu pg = new View.wTestMenu(candidate);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();

@@ -21,10 +21,10 @@ namespace Ways.View
     public partial class wForm : Window
     {
         private Candidate candidate;
-        public wForm(Candidate candidate)
+        public wForm(Candidate c)
         {
             InitializeComponent();
-            Candidate = candidate;
+            Candidate = c;
             if(Candidate.Contact)
             {
                 bValidate.IsEnabled = false;

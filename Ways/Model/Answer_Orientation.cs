@@ -10,10 +10,10 @@ namespace Ways.Model
 {
     public class Answer_Orientation
     {
-        private int _id;
-        private int _questionId;
-        private string _text;
-        private int _jobIndex;
+        private int id;
+        private int questionId;
+        private string text;
+        private int jobIndex;
 
         public Answer_Orientation(int id, int questionId, string text, int jobIndex)
         {
@@ -28,10 +28,10 @@ namespace Ways.Model
 
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public int QuestionId { get => _questionId; set => _questionId = value; }
-        public string Text { get => _text; set => _text = value; }
-        public int JobIndex { get => _jobIndex; set => _jobIndex = value; }
+        public int Id { get => id; set => id = value; }
+        public int QuestionId { get => questionId; set => questionId = value; }
+        public string Text { get => text; set => text = value; }
+        public int JobIndex { get => jobIndex; set => jobIndex = value; }
 
         public void AddAnswerOrientation(string answer, int questionId, int jobIndex)
         {

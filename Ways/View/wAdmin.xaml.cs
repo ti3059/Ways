@@ -21,12 +21,12 @@ namespace Ways.View
     /// </summary>
     public partial class wAdmin : Window
     {
-        private string msg;
-        public wAdmin(string choice)
+        private string currentTest;
+        public wAdmin(string msg)
         {
             InitializeComponent();
-            msg = choice;
-            if(choice == "GAME")
+            currentTest = msg;
+            if(currentTest == "GAME")
             {
                 addQuestionGameToListView();
             }
@@ -37,11 +37,11 @@ namespace Ways.View
         }
 
         public void addQuestionGameToListView()
-        {
+        {   
             vmStart.getQuestionsGame();
-            foreach(Questions_Game q in vmStart.lstQustionsGames)
+            foreach(Questions_Game questionGameInList in vmStart.lstQustionsGames)
             {
-                lvAdmin.Items.Add(q);
+                lvAdmin.Items.Add(questionGameInList);
             }
             lvAdmin.Items.RemoveAt(0);
         }
@@ -49,18 +49,18 @@ namespace Ways.View
         public void addQuestionOrientationToListView()
         {
             vmStart.getQuestionsOrientation();
-            foreach (Questions_Orientation q in vmStart.lstQuestionsOrientation)
+            foreach (Questions_Orientation questionOrientationInList in vmStart.lstQuestionsOrientation)
             {
-                lvAdmin.Items.Add(q);
+                lvAdmin.Items.Add(questionOrientationInList);
             }
             lvAdmin.Items.RemoveAt(0);
         }
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wChoiceMenuAdmin pgChoice = new View.wChoiceMenuAdmin();
-            pgChoice.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            pgChoice.Show();
+            View.wChoiceMenuAdmin pg = new View.wChoiceMenuAdmin();
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
             this.Close();
         }
 
@@ -68,18 +68,18 @@ namespace Ways.View
         {       
             if(lvAdmin.SelectedValue != null)
             {
-                if (msg == "GAME")
+                if (currentTest == "GAME")
                 {
-                    Questions_Game qSelected = (Questions_Game)lvAdmin.SelectedItems[0];
-                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(msg, qSelected);
+                    Questions_Game questionGameSelected = (Questions_Game)lvAdmin.SelectedItems[0];
+                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(currentTest, questionGameSelected);
                     pgAdminQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pgAdminQuestion.Show();
                     this.Close();
                 }
                 else
                 {
-                    Questions_Orientation qSelected = (Questions_Orientation)lvAdmin.SelectedItems[0];
-                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(msg, qSelected);
+                    Questions_Orientation questionOrientationSelected = (Questions_Orientation)lvAdmin.SelectedItems[0];
+                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(currentTest, questionOrientationSelected);
                     pgAdminQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pgAdminQuestion.Show();
                     this.Close();
@@ -90,7 +90,7 @@ namespace Ways.View
         private void btnAddQuestion_Click(object sender, RoutedEventArgs e)
         {
             
-                View.wEditQuestion pgEditQuestion = new View.wEditQuestion(msg);
+                View.wEditQuestion pgEditQuestion = new View.wEditQuestion(currentTest);
                 pgEditQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pgEditQuestion.Show();
                 this.Close();

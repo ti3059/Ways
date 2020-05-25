@@ -22,7 +22,7 @@ namespace Ways.View
     /// </summary>
     public partial class wAdminQuestion : Window
     {
-        private string message;
+        private string currentTest;
         Questions_Game questionGame;
         Questions_Orientation questionOrientation;
 
@@ -30,21 +30,21 @@ namespace Ways.View
         public wAdminQuestion(string msg)
         {
             InitializeComponent();
-            message = msg;
+            currentTest = msg;
         }
 
-        public wAdminQuestion(string msg, Questions_Game q) : this(msg)
+        public wAdminQuestion(string msg, Questions_Game currentQuestionGame) : this(msg)
         {
             InitializeComponent();
-            questionGame = q;
-            lQuestionSubject.Text = q.Question;
+            questionGame = currentQuestionGame;
+            lQuestionSubject.Text = currentQuestionGame.Question;
         }
 
-        public wAdminQuestion(string msg, Questions_Orientation q) : this(msg)
+        public wAdminQuestion(string msg, Questions_Orientation currentQuestionOrientation) : this(msg)
         {
             InitializeComponent();
-            questionOrientation = q;
-            lQuestionSubject.Text = q.Question;
+            questionOrientation = currentQuestionOrientation;
+            lQuestionSubject.Text = questionOrientation.Question;
         }
 
 
@@ -52,13 +52,13 @@ namespace Ways.View
         private void bEdition_Click(object sender, RoutedEventArgs e)
         {
             View.wEditQuestion pg;
-            if(message == "GAME")
+            if(currentTest == "GAME")
             {
-                pg = new View.wEditQuestion(message, questionGame);
+                pg = new View.wEditQuestion(currentTest, questionGame);
             }
             else
             {
-                pg = new View.wEditQuestion(message, questionOrientation);
+                pg = new View.wEditQuestion(currentTest, questionOrientation);
             }
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
@@ -68,16 +68,16 @@ namespace Ways.View
 
         private void bBarem_Click(object sender, RoutedEventArgs e)
         {
-            if(message == "GAME")
+            if(currentTest == "GAME")
             {
-                View.wEditRightAnswer pg = new View.wEditRightAnswer(questionGame, message);
+                View.wEditRightAnswer pg = new View.wEditRightAnswer(questionGame, currentTest);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
             }
             else
             {
-                View.wEditJobAnswer pg = new View.wEditJobAnswer(questionOrientation, message);
+                View.wEditJobAnswer pg = new View.wEditJobAnswer(questionOrientation, currentTest);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
@@ -91,23 +91,23 @@ namespace Ways.View
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    if(message == "GAME")
+                    if(currentTest == "GAME")
                     {
-                        Answer_Game aGame = new Answer_Game();
-                        aGame.DeleteAnswersGameFromQuestionId(questionGame.Id);
-                        Questions_Game qGame = new Questions_Game();
-                        qGame.DeleteQuestionGame(questionGame.Id);
+                        Answer_Game newAnswerGame = new Answer_Game();
+                        newAnswerGame.DeleteAnswersGameFromQuestionId(questionGame.Id);
+                        Questions_Game newQuestionGame = new Questions_Game();
+                        newQuestionGame.DeleteQuestionGame(questionGame.Id);
                     }
                     else
                     {
-                        Answer_Orientation aOrientation = new Answer_Orientation();
-                        aOrientation.DeleteAnswersOrientationFromQuestionId(questionOrientation.Id);
-                        Questions_Orientation qOrientation = new Questions_Orientation();
-                        qOrientation.DeleteQuestionOrientation(questionOrientation.Id);
+                        Answer_Orientation newAnswerOrientation = new Answer_Orientation();
+                        newAnswerOrientation.DeleteAnswersOrientationFromQuestionId(questionOrientation.Id);
+                        Questions_Orientation newQuestionOrientation = new Questions_Orientation();
+                        newQuestionOrientation.DeleteQuestionOrientation(questionOrientation.Id);
                     }
                     MessageBox.Show("Question supprimée.", "My App");
                     //Mettre à jours la liste
-                    View.wAdmin pg = new View.wAdmin(message);
+                    View.wAdmin pg = new View.wAdmin(currentTest);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
@@ -120,7 +120,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdmin pg = new View.wAdmin(message);
+            View.wAdmin pg = new View.wAdmin(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

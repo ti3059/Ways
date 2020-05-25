@@ -21,12 +21,10 @@ namespace Ways.View
     public partial class wInfoCandidate : Window
     {
         private Candidate candidate;
-        private bool control = false;
         public wInfoCandidate(Candidate c)
         {
             InitializeComponent();
             candidate = c;
-
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

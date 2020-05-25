@@ -10,21 +10,15 @@ namespace Ways.Model
 {
     public class Candidate
     {
-		private string _surname;
-		private int _id;
+		private string surname;
+		private int id;
 
-		private int _resultGame;                //Bdd
-		private int _rankGame;                  //Bdd
-		private List<string> _buddyListGame;    //-bdd
-		private int _point;                     //-bdd
+		private int score;                     //-bdd
 
-		private string _emailOrientation;       //-Bdd
-		private string _resultOrientation;      //-Bdd
+		private Test_Orientation testOrientation;
+		private Test_Game testGame;
 
-		private Test_Orientation _test_Orientation;
-		private Test_Game _test_Game;
-
-		private List<string> _lstInfoCandidate;
+		private List<string> lstInfoCandidate;
 		private List<Candidate> lstCandidate = new List<Candidate>();
 
 		private bool contact = false;
@@ -37,9 +31,9 @@ namespace Ways.Model
 
 		}
 
-		public Candidate(int score, string surname)
+		public Candidate(int newScore, string surname)
         {
-			Point = score;
+			Score = newScore;
 			Surname = surname;
         }
 
@@ -54,21 +48,16 @@ namespace Ways.Model
             }
         }
 
-		public int ResultGame { get => _resultGame; set => _resultGame = value; }
-		public int RankGame { get => _rankGame; set => _rankGame = value; }
-		public List<string> BuddyListGame { get => _buddyListGame; set => _buddyListGame = value; }
-		public int Point { get => _point; set => _point = value; }
-		public string EmailOrientation { get => _emailOrientation; set => _emailOrientation = value; }
-		public string ResultOrientation { get => _resultOrientation; set => _resultOrientation = value; }
 		public List<int> OrientationPoints { get => orientationPoints; set => orientationPoints = value; }
-        public string Surname { get => _surname; set => _surname = value; }
-        public List<string> LstInfoCandidate { get => _lstInfoCandidate; set => _lstInfoCandidate = value; }
-		public Test_Orientation Test_Orientation { get => _test_Orientation; set => _test_Orientation = value; }
-        public Test_Game Test_Game { get => _test_Game; set => _test_Game = value; }
-        public int Id { get => _id; set => _id = value; }
+        public string Surname { get => surname; set => surname = value; }
+        public List<string> LstInfoCandidate { get => lstInfoCandidate; set => lstInfoCandidate = value; }
+		public Test_Orientation Test_Orientation { get => testOrientation; set => testOrientation = value; }
+        public Test_Game Test_Game { get => testGame; set => testGame = value; }
+        public int Id { get => id; set => id = value; }
 		public List<Candidate> LstCandidate { get => lstCandidate; set => lstCandidate = value; }
 		public bool Contact { get => contact; set => contact = value; }
         public bool Info { get => info; set => info = value; }
+        public int Score { get => score; set => score = value; }
 
         public void UpOrientation(int jobIndex)
 		{
@@ -77,7 +66,7 @@ namespace Ways.Model
 
 		public void UpPoints()
 		{
-			Point ++;		
+			Score ++;		
 		} 
 
 		public void SaveInfoInBase()
@@ -86,7 +75,7 @@ namespace Ways.Model
 			s.connection.Open();
 			string requestCandidate = "INSERT INTO candidate(score, surname) VALUES (@score, @surname)";
 			MySqlCommand cmd1 = new MySqlCommand(requestCandidate, s.connection);
-			cmd1.Parameters.AddWithValue("@score", Point);
+			cmd1.Parameters.AddWithValue("@score", Score);
 			cmd1.Parameters.AddWithValue("@surname", Surname);
 			cmd1.ExecuteNonQuery();
 			int idCandidate = Convert.ToInt32(cmd1.LastInsertedId);
@@ -165,7 +154,7 @@ namespace Ways.Model
 			s.connection.Open();
 			string request = "UPDATE candidate SET score = @score WHERE id = @id";
 			MySqlCommand cmd = new MySqlCommand(request, s.connection);
-			cmd.Parameters.AddWithValue("@score", Point);
+			cmd.Parameters.AddWithValue("@score", Score);
 			cmd.Parameters.AddWithValue("@id", Id);
 			cmd.ExecuteNonQuery();
 			s.connection.Close();

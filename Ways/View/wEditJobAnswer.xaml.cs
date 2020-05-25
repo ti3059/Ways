@@ -23,15 +23,15 @@ namespace Ways.View
     {
         private Questions_Orientation questionSelected;
         private List<Answer_Orientation> lstAnswer = new List<Answer_Orientation>();
-        private string message;
+        private string currentTest;
 
         public wEditJobAnswer(Questions_Orientation question, string msg)
         {
             InitializeComponent();
             questionSelected = question;
-            message = msg;
-            Answer_Orientation answerO = new Answer_Orientation();
-            lstAnswer = answerO.SelectAnswerOrientationFromQuestionOrientationId(questionSelected.Id);
+            currentTest = msg;
+            Answer_Orientation answerOrientation = new Answer_Orientation();
+            lstAnswer = answerOrientation.SelectAnswerOrientationFromQuestionOrientationId(questionSelected.Id);
             setAnswers();
         }
 
@@ -42,12 +42,12 @@ namespace Ways.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Answer_Orientation answer = new Answer_Orientation();
-            answer.EditJobAnswerOrientation(lstAnswer[0].Id, cbAnswerJobOne.SelectedIndex);
-            answer.EditJobAnswerOrientation(lstAnswer[1].Id, cbAnswerJobTwo.SelectedIndex);
-            answer.EditJobAnswerOrientation(lstAnswer[2].Id, cbAnswerJobThree.SelectedIndex);
-            answer.EditJobAnswerOrientation(lstAnswer[3].Id, cbAnswerJobFour.SelectedIndex);
-            View.wAdminQuestion pg = new View.wAdminQuestion(message, questionSelected);
+            Answer_Orientation newAnswerOrientation = new Answer_Orientation();
+            newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[0].Id, cbAnswerJobOne.SelectedIndex);
+            newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[1].Id, cbAnswerJobTwo.SelectedIndex);
+            newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[2].Id, cbAnswerJobThree.SelectedIndex);
+            newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[3].Id, cbAnswerJobFour.SelectedIndex);
+            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -55,7 +55,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdminQuestion pg = new View.wAdminQuestion(message, questionSelected);
+            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

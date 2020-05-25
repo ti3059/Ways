@@ -15,16 +15,16 @@ namespace Ways.ViewModel
         public static List<Job> lstjobs = new List<Job>();
         public static void getQuestionsGame()
         {
-            Questions_Game game = new Questions_Game();
+            Questions_Game newGame = new Questions_Game();
             lstQustionsGames.Clear();
-            lstQustionsGames = game.SelectQuestionsGame();
+            lstQustionsGames = newGame.SelectQuestionsGame();
         }
 
         public static void getQuestionsOrientation()
         {
-            Questions_Orientation or = new Questions_Orientation();
+            Questions_Orientation newGameOrientation = new Questions_Orientation();
             lstQuestionsOrientation.Clear();
-            lstQuestionsOrientation = or.SelectQuestionsOrientation();
+            lstQuestionsOrientation = newGameOrientation.SelectQuestionsOrientation();
         }
 
         public static void getJobs()

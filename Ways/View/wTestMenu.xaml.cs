@@ -22,10 +22,10 @@ namespace Ways.View
     {
         private Candidate candidate;
 
-        public wTestMenu(Candidate c)
+        public wTestMenu(Candidate currentCandidate)
         {
             InitializeComponent();
-            candidate = c;
+            candidate = currentCandidate;
             SetContentButton();
         }
 

@@ -23,10 +23,10 @@ namespace Ways.View
     public partial class wResultOrientationCandidate : Window
     {
         private Candidate candidate;
-        public wResultOrientationCandidate(Candidate c)
+        public wResultOrientationCandidate(Candidate currentCandidate)
         {
             InitializeComponent();
-            Candidate = c;
+            Candidate = currentCandidate;
             SetJobs();
         }
 

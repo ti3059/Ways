@@ -23,28 +23,27 @@ namespace Ways.View
     public partial class wScore : Window
     {
         private Candidate candidate;
-        public wScore(Candidate candidate)
+        public wScore(Candidate currentCandidate)
         {
             InitializeComponent();
-            Candidate = candidate;
+            Candidate = currentCandidate;
             addCandidatesToListView();
             if (candidate.Contact)
             {
                 btnForm.IsEnabled = false;
                 btnForm.Content = "Vous avez déjà terminé le test";
-
             }
         }
         public Candidate Candidate { get => candidate; set => candidate = value; }
 
         public void addCandidatesToListView()
         {
-            Candidate candidate = new Candidate();
-            List<Candidate> lstCandidates = candidate.SelectAllCandidates();
+            Candidate newCandidate = new Candidate();
+            List<Candidate> lstCandidates = newCandidate.SelectAllCandidates();
 
-            foreach (Candidate c in lstCandidates)
+            foreach (Candidate candidateInList in lstCandidates)
             {
-                lvCandidate.Items.Add(c);
+                lvCandidate.Items.Add(candidateInList);
             }
             lvCandidate.Items.RemoveAt(0);
         }

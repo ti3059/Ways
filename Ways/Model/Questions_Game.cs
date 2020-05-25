@@ -10,8 +10,8 @@ namespace Ways.Model
 {
     public class Questions_Game
     {
-        private int _id;
-        private string _question;
+        private int id;
+        private string question;
 
         public Questions_Game(int id, string question)
         {
@@ -95,7 +95,7 @@ namespace Ways.Model
             return questionGame;
         }
 
-        public int Id { get => _id; set => _id = value; }
-        public string Question { get => _question; set => _question = value; }
+        public int Id { get => id; set => id = value; }
+        public string Question { get => question; set => question = value; }
     }
 }

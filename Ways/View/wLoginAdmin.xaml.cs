@@ -28,9 +28,9 @@ namespace Ways.View
         {
             if ((Model.Admin.Login == tbLogin.Text) && (Model.Admin.Password == tbPassword.Password.ToString()))
             {
-                wChoiceMenuAdmin wChoiceMenuAdmin = new wChoiceMenuAdmin();
-                wChoiceMenuAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-                wChoiceMenuAdmin.Show();
+                wChoiceMenuAdmin pg = new wChoiceMenuAdmin();
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
                 this.Close();
 
             }
