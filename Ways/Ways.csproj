@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\wMailAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\wResultOrientationCandidate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +149,9 @@
     </Compile>
     <Compile Include="View\wLoginCandidate.xaml.cs">
       <DependentUpon>wLoginCandidate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\wMailAdmin.xaml.cs">
+      <DependentUpon>wMailAdmin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wResultOrientationCandidate.xaml.cs">
       <DependentUpon>wResultOrientationCandidate.xaml</DependentUpon>

@@ -27,5 +27,7 @@ namespace Ways.Model
         public static string Login { get; } = "test";
 
         public static string Password { get; } = "test";
+
+
     }
 }

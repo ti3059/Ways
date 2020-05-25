@@ -13,6 +13,9 @@ namespace Ways.ViewModel
         public static List<Questions_Game> lstQustionsGames = new List<Questions_Game>();
         public static List<Questions_Orientation> lstQuestionsOrientation = new List<Questions_Orientation>();
         public static List<Job> lstjobs = new List<Job>();
+        public static string emailAdmin = "";
+
+
         public static void getQuestionsGame()
         {
             Questions_Game newGame = new Questions_Game();

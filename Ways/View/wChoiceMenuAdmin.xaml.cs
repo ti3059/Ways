@@ -47,5 +47,13 @@ namespace Ways.View
             pg.Show();
             this.Close();
         }
+
+        private void btnModifyMailAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            View.wMailAdmin pg = new View.wMailAdmin();
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
+        }
     }
 }

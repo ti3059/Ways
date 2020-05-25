@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Ways.Model;
+using Ways.ViewModel;
 
 namespace Ways
 {
@@ -31,10 +32,18 @@ namespace Ways
 
         private void btnCandidat_Click(object sender, RoutedEventArgs e)
         {
-            View.wLoginCandidate pg = new View.wLoginCandidate();
-            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            pg.Show();
-            this.Close();
+            if (vmStart.emailAdmin == "")
+            {
+                MessageBox.Show("Veuillez demander à l'administrateur de renseigner un Email");
+            }
+            else
+            {
+                View.wLoginCandidate pg = new View.wLoginCandidate();
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
+            }
+
         }
 
         private void btnAdministrateur_Click(object sender, RoutedEventArgs e)

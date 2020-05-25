@@ -26,6 +26,7 @@
                 <Button x:Name="btnGameManage" BorderThickness="1" BorderBrush="#FF00B9FF" FontSize="18" Background="Transparent" Foreground="#FF00B9FF" Content="Gestion du jeu"  Margin="0" Click="btnGameManage_Click" Height="200" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                 <Button x:Name="btnOrientationManage" BorderThickness="1" BorderBrush="#FF00B9FF" FontSize="18" Background="Transparent" Foreground="#FF00B9FF" Content="Gestion de l'orientation"  Margin="0" Click="btnOrientationManage_Click" Height="200" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             </Grid>
+            <Button x:Name="btnModifyMailAdmin" Content="Ok" HorizontalAlignment="Left" Margin="304,346,0,0" VerticalAlignment="Top" Width="210" Height="50" Click="btnModifyMailAdmin_Click"/>
 
         </Grid>
     </Grid>
