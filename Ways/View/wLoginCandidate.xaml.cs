@@ -27,12 +27,20 @@ namespace Ways.View
 
         private void btnCandidate_Click(object sender, RoutedEventArgs e)
         {
-            Model.Candidate c = new Model.Candidate(vmStart.lstjobs);
-            c.Surname = tbLogin.Text;
-            View.wTestMenu pg = new View.wTestMenu(c);
-            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            pg.Show();
-            this.Close();
+            if((tbLogin.Text == "Login") || (tbLogin.Text == ""))
+            {
+                MessageBox.Show("Veuillez renseigner un nom d'utilisateur");
+            }
+            else
+            {
+                Model.Candidate c = new Model.Candidate(vmStart.lstjobs);
+                c.Surname = tbLogin.Text;
+                View.wTestMenu pg = new View.wTestMenu(c);
+                pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+                pg.Show();
+                this.Close();
+            }
+
         }
     }
 }

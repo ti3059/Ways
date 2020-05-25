@@ -86,6 +86,7 @@
             </StackPanel>
             <Button x:Name="btnAdd" Content="Valider" HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Click="btnAdd_Click" Height="50" Background="#00DDDDDD" BorderBrush="Lime" Foreground="Lime" Margin="0,30,0,0"/>
         </StackPanel>
+        <ListBox HorizontalAlignment="Left" Height="1" Margin="915,123,-132,0" VerticalAlignment="Top" Width="9"/>
 
 
 

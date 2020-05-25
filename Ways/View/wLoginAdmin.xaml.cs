@@ -39,5 +39,9 @@ namespace Ways.View
                 lblError.Visibility = Visibility;
             }
         }
+
+        private void tbLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
     }
 }

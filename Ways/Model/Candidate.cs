@@ -169,8 +169,8 @@ namespace Ways.Model
 				cmd1.ExecuteNonQuery();
 				int id = (int)cmd1.LastInsertedId;
 
-				string requestContact = "INSERT INTO candidate_contact(id_candidate, id_contact) VALUES (@id_candidate, @id_contact)";
-				MySqlCommand cmd2 = new MySqlCommand(requestContact, s.connection);
+				string requestCandidateContact = "INSERT INTO candidate_contact(id_candidate, id_contact) VALUES (@id_candidate, @id_contact)";
+				MySqlCommand cmd2 = new MySqlCommand(requestCandidateContact, s.connection);
 				cmd2.Parameters.AddWithValue("@id_candidate", Id);
 				cmd2.Parameters.AddWithValue("@id_contact", id);
 				cmd2.ExecuteNonQuery();

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Ways.Model;
 
 namespace Ways.View
 {
@@ -24,7 +25,6 @@ namespace Ways.View
         {
             InitializeComponent();
             Candidate = candidate;
-            Candidate.
             if(Candidate.Contact)
             {
                 bValidate.IsEnabled = false;
@@ -51,7 +51,7 @@ namespace Ways.View
             {
                 contactList.Add(tbMailFour.Text);
             }
-            Candidate.SetContactes(contactList);
+            Candidate.SetContacts(contactList);
             // pointe vers wScore
         }
 
