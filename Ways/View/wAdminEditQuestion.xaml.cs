@@ -51,7 +51,6 @@ namespace Ways.View
             questionOrientation = q;
             currentTest = msg;
             listAnswerOrientation = getAnswerByQuestionOrientationId(q.Id);
-            List<string> listAnswer = new List<string>();
             setAnswerTBByAnswerTextList(new List<string> { listAnswerOrientation[0].Text.ToString(), listAnswerOrientation[1].Text.ToString(), listAnswerOrientation[2].Text.ToString(), listAnswerOrientation[3].Text.ToString() });
             tbQuestion.Text = q.Question;
         }
@@ -165,7 +164,6 @@ namespace Ways.View
         }
         public void setAnswerTBByAnswerTextList(List<String> answerTextList)
         {
-            
             tbAnswerOne.Text = answerTextList[0];
             tbAnswerTwo.Text = answerTextList[1];
             tbAnswerThree.Text = answerTextList[2];

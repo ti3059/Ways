@@ -90,7 +90,8 @@ namespace Ways.Model
             try
             {
                 s.connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT * FROM reponses_orientation", s.connection);
+                MySqlCommand command = new MySqlCommand("SELECT * FROM reponses_orientation where question_id = @question_id", s.connection);
+                command.Parameters.AddWithValue("@question_id", id);
                 using (reader = command.ExecuteReader())
                 {
                     while (reader.Read())

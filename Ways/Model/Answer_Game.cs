@@ -91,8 +91,9 @@ namespace Ways.Model
             try
             {
                 s.connection.Open();
-                MySqlCommand command = new MySqlCommand("SELECT * FROM reponses_jeu", s.connection);
-                using (reader = command.ExecuteReader())
+                MySqlCommand command = new MySqlCommand("SELECT * FROM reponses_jeu where question_id = @question_id", s.connection);
+                command.Parameters.AddWithValue("@question_id", id);
+                using (reader = command.ExecuteReader())    
                 {
                     while (reader.Read())
                     {
