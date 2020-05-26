@@ -64,7 +64,8 @@ namespace Ways.Model
 
 		public void UpPoints()
 		{
-			Score ++;		
+			Score ++;
+			UpdatePoint();
 		} 
 
 		public void SaveInfoInBase()

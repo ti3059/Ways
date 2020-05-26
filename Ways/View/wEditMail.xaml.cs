@@ -79,18 +79,20 @@ namespace Ways.View
                         this.Close();
                         break;
                     case "TESTORIENTATION":
-                        //SendMail();
+                        SendMail();
                         View.wCandidateResultOrientation pg2 = new View.wCandidateResultOrientation(Candidate);
                         pg2.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg2.Show();
                         this.Close();
                         break;
                     case "CONTACT":
-                        //SendMail();
+                        SendMail();
+                        Candidate.UpPoints();
                         View.wCandidateResultGame pg3 = new View.wCandidateResultGame(Candidate);
                         pg3.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg3.Show();
                         this.Close();
+                 
                         break;
                 }
             }
@@ -105,43 +107,61 @@ namespace Ways.View
         {
             string subject = "";
             string textBody = "";
+
+
             switch (Message)
             {
-                case "ORIENTATION":
+                case "TESTORIENTATION":
+                    Job job1 = vmStart.lstjobs[Candidate.OrientationPoints[0]];
+                    Job job2 = vmStart.lstjobs[Candidate.OrientationPoints[1]];
+                    Job job3 = vmStart.lstjobs[Candidate.OrientationPoints[2]];
+
                     subject = "Ways - Résultat de votre test d'orientation";
                     textBody = "Bonjour, " + Candidate.Surname + "\n";
                     textBody += "\n";
                     textBody += "Vous trouverez ci-dessous le résultat de votre test d'orientation effectué à l'évènement Journée Portes Ouvertes du CESI." + "\n";
                     textBody += "Nous vous souhaitons une bonne réception." + "\n";
-                    //affichage de la liste des métiers
+                    textBody += "\n";
+
+                    //1er job
+                    textBody += "Métier : " + "\n";
+                    textBody += job1.Name + "\n";
+                    textBody += "Description : " + "\n";
+                    textBody += job1.Des + "\n";
+                    textBody += "Mission(s) : " + "\n";
+                    foreach (string t in job1.Tasks)
+                    {
+                        textBody += t + "\n";
+                    }
+                    textBody += "\n";
+
+                    //2eme job
+                    textBody += "Métier : " + "\n";
+                    textBody += job2.Name + "\n";
+                    textBody += "Description : " + "\n";
+                    textBody += job2.Des + "\n";
+                    textBody += "Mission(s) : " + "\n";
+                    foreach (string t in job2.Tasks)
+                    {
+                        textBody += t + "\n";
+                    }
+                    textBody += "\n";
+
+                    //3eme job
+                    textBody += "Métier : " + "\n";
+                    textBody += job3.Name + "\n";
+                    textBody += "Description : " + "\n";
+                    textBody += job3.Des + "\n";
+                    textBody += "Mission(s) : " + "\n";
+                    foreach (string t in job3.Tasks)
+                    {
+                        textBody += t + "\n";
+                    }
+                    textBody += "\n";
+
                     textBody += "Cordialement" + "\n";
                     textBody += "\n";
                     textBody += "Ways";
-                    /*
-                    var fromAddress = new MailAddress("projetsways2018@gmail.com", "Ways");
-                    var toAddress = new MailAddress(tbMail.Text, "To Name");
-                    const string fromPassword = "cesi_ways";
-                    const string subject = "Subject";
-                    const string body = "Body";
-
-                    var smtp = new SmtpClient
-                    {
-                        Host = "smtp.gmail.com",
-                        Port = 587,
-                        EnableSsl = true,
-                        DeliveryMethod = SmtpDeliveryMethod.Network,
-                        UseDefaultCredentials = false,
-                        Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-                    };
-                    using (var message = new MailMessage(fromAddress, toAddress)
-                    {
-                        Subject = subject,
-                        Body = body
-                    })
-                    {
-                        smtp.Send(message);
-                    }
-                    */
                     break;
                 case "CONTACT":
                     subject = "Ways - Invitation à l'évènement Journée Portes Ouvertes";
@@ -192,7 +212,7 @@ namespace Ways.View
             catch (Exception ep)
             {
                 Console.WriteLine("failed to send email with the following error:");
-                Console.WriteLine(ep.Message);
+                MessageBox.Show(ep.Message);
             }
         }
     }

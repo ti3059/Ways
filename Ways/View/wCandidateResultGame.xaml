@@ -26,7 +26,7 @@
                     <ListView.View>
                         <GridView>
                             <GridViewColumn DisplayMemberBinding="{Binding Surname}" Header="Nom du joueur" Width="340"/>
-                            <GridViewColumn DisplayMemberBinding="{Binding Point}" Header="Score" Width="350"/>
+                            <GridViewColumn DisplayMemberBinding="{Binding Score}" Header="Score" Width="350"/>
                         </GridView>
                     </ListView.View>
                     <ListView Height="100" Width="100">
