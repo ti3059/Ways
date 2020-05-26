@@ -1,4 +1,4 @@
-﻿<Window x:Class="Ways.View.wLoginAdmin"
+﻿<Window x:Class="Ways.View.wAdminLogin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -32,7 +32,7 @@
             <StackPanel VerticalAlignment="Center" Margin="10,16" Grid.ColumnSpan="2">
                 <TextBox x:Name="tbLogin"  TextAlignment="Center" BorderThickness="1" Height="37" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White"  Margin="0,10" Text="Login" TextChanged="tbLogin_TextChanged"/>
                 <PasswordBox x:Name="tbPassword" Password="Password" HorizontalContentAlignment="Center" FontSize="20" BorderThickness="1" Height="37" BorderBrush="White" Background="Transparent" Foreground="White"  Margin="0,10"/>
-                <Button x:Name="btnRegister" BorderThickness="1" Height="49" FontSize="20"  BorderBrush="#0f4c75" Background="White" Foreground="#0f4c75" Content="Valider"  Margin="0,10" Click="btnAdministrateur_Click"/>
+                <Button x:Name="btnRegister" BorderThickness="1" Height="50" FontSize="20"  BorderBrush="Lime" Background="Transparent" Foreground="Lime" Content="Valider"  Margin="0,10" Click="btnAdministrateur_Click" Width="250"/>
             </StackPanel>
         </Grid>
         <Label x:Name="lblError" Content="Login ou mot de passe incorrect, réessayez" Visibility="Hidden" Foreground="Red" HorizontalAlignment="Left" Margin="50,129,0,0" VerticalAlignment="Top" Width="240"/>

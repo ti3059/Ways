@@ -108,7 +108,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wLoginAdmin.xaml">
+    <Page Include="View\wAdminLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,8 +173,8 @@
     <Compile Include="View\wAdminCurrentTest.xaml.cs">
       <DependentUpon>wAdminCurrentTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wLoginAdmin.xaml.cs">
-      <DependentUpon>wLoginAdmin.xaml</DependentUpon>
+    <Compile Include="View\wAdminLogin.xaml.cs">
+      <DependentUpon>wAdminLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wStart.xaml.cs">
       <DependentUpon>wStart.xaml</DependentUpon>

@@ -21,9 +21,9 @@
         <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100">
             <TextBlock Text="Projet WAYS" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="74,-110,68,0" FontSize="25" Height="36" Width="138"></TextBlock>
             <StackPanel VerticalAlignment="Center" Margin="10">
-                <Button x:Name="btnCandidat" BorderThickness="1" Height="49" BorderBrush="White" FontSize="20" Background="Transparent" Foreground="White" Content="Espace Candidat"  Margin="0,10" Click="btnCandidat_Click">
+                <Button x:Name="btnCandidat" BorderThickness="1" Height="50" BorderBrush="#FF00B9FF" FontSize="20" Background="Transparent" Foreground="#FF00B9FF" Content="Espace Candidat"  Margin="0,10" Click="btnCandidat_Click" Width="250">
                 </Button>
-                <Button x:Name="btnAdministrateur" BorderThickness="1" Height="49" Background="Transparent" FontSize="20" BorderBrush="White" Foreground="White" Content="Espace Administrateur"  Margin="0,10" Click="btnAdministrateur_Click">
+                <Button x:Name="btnAdministrateur" BorderThickness="1" Height="50" Background="Transparent" FontSize="20" BorderBrush="#FF00B9FF" Foreground="#FF00B9FF" Content="Espace Administrateur"  Margin="0,10" Click="btnAdministrateur_Click" Width="250">
                 </Button>
             </StackPanel>
         </Grid>
