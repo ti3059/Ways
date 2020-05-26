@@ -21,7 +21,6 @@ namespace Ways.Model
 		private List<string> lstInfoCandidate;
 		private List<Candidate> lstCandidate = new List<Candidate>();
 
-		private bool contact = false;
 		private bool info = false;
 
 
@@ -55,7 +54,6 @@ namespace Ways.Model
         public Test_Game Test_Game { get => testGame; set => testGame = value; }
         public int Id { get => id; set => id = value; }
 		public List<Candidate> LstCandidate { get => lstCandidate; set => lstCandidate = value; }
-		public bool Contact { get => contact; set => contact = value; }
         public bool Info { get => info; set => info = value; }
         public int Score { get => score; set => score = value; }
 
@@ -160,29 +158,5 @@ namespace Ways.Model
 			s.connection.Close();
 		}
 
-		public void SetContacts(List<string> contacts)
-		{
-			Server s = new Server();
-			s.connection.Open();
-			foreach (string contact in contacts)
-			{
-				string requestContact = "INSERT INTO contact(mail) VALUES (@mail)";
-				MySqlCommand cmd1 = new MySqlCommand(requestContact, s.connection);
-				cmd1.Parameters.AddWithValue("@mail", contact);
-				cmd1.ExecuteNonQuery();
-				int id = (int)cmd1.LastInsertedId;
-
-				string requestCandidateContact = "INSERT INTO candidat_contact(id_candidat, id_contact) VALUES (@id_candidate, @id_contact)";
-				MySqlCommand cmd2 = new MySqlCommand(requestCandidateContact, s.connection);
-				cmd2.Parameters.AddWithValue("@id_candidate", Id);
-				cmd2.Parameters.AddWithValue("@id_contact", id);
-				cmd2.ExecuteNonQuery();
-
-				UpPoints();
-			}
-			s.connection.Close();
-			Contact = true;
-			UpdatePoint();
-		}
 	}
 }

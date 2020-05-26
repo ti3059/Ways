@@ -114,7 +114,7 @@ namespace Ways.View
                     try
                     {
                         Questions_Orientation editQuestionOrientation = new Questions_Orientation();
-                        editQuestionOrientation.EditQuestionOrientation(questionGame.Id, tbQuestion.Text.ToString());
+                        editQuestionOrientation.EditQuestionOrientation(questionOrientation.Id, tbQuestion.Text.ToString());
                         Answer_Orientation editAnswerOrientation = new Answer_Orientation();
                         editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[0].Id, tbAnswerOne.Text.ToString());
                         editAnswerOrientation.EditTextAnswerOrientation(listAnswerOrientation[1].Id, tbAnswerTwo.Text.ToString());

@@ -94,7 +94,13 @@ namespace Ways.View
 
         private void btnReportInfo_Click(object sender, RoutedEventArgs e)
         {
-            
+            //Pointe vers la page adminEmail
+            //Param du construc checker si admin ou candidat 
+            //Si candidat 
+            View.wMailAdmin pg = new View.wMailAdmin("TESTORIENTATION", Candidate);
+            pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            pg.Show();
+            this.Close();
         }
     }
 }

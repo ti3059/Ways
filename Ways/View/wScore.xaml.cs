@@ -28,11 +28,6 @@ namespace Ways.View
             InitializeComponent();
             Candidate = currentCandidate;
             addCandidatesToListView();
-            if (candidate.Contact)
-            {
-                btnForm.IsEnabled = false;
-                btnForm.Content = "Vous avez déjà terminé le test";
-            }
         }
         public Candidate Candidate { get => candidate; set => candidate = value; }
 
@@ -58,7 +53,7 @@ namespace Ways.View
 
         private void btnForm_Click(object sender, RoutedEventArgs e)
         {
-            View.wForm pg = new View.wForm(candidate);
+            View.wMailAdmin pg = new View.wMailAdmin("CONTACT", Candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

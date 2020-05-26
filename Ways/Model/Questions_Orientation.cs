@@ -54,7 +54,7 @@ namespace Ways.Model
         {
             Server s = new Server();
             s.connection.Open();
-            string request = "UPDATE questions_orientation SET question = @question WHERE id = @id)";
+            string request = "UPDATE questions_orientation SET question = @question WHERE id = @id";
             MySqlCommand cmd = new MySqlCommand(request, s.connection);
             cmd.Parameters.AddWithValue("@question", question);
             cmd.Parameters.AddWithValue("@id", id);

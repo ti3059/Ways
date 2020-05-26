@@ -60,10 +60,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wForm.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\wInfoCandidate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,9 +136,6 @@
     <Compile Include="ViewModel\vmStart.cs" />
     <Compile Include="View\wAdminQuestion.xaml.cs">
       <DependentUpon>wAdminQuestion.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\wForm.xaml.cs">
-      <DependentUpon>wForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wInfoCandidate.xaml.cs">
       <DependentUpon>wInfoCandidate.xaml</DependentUpon>
