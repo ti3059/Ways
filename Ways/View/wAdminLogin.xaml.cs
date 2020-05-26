@@ -17,9 +17,9 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wLoginAdmin.xaml
     /// </summary>
-    public partial class wLoginAdmin : Window
+    public partial class wAdminLogin : Window
     {
-        public wLoginAdmin()
+        public wAdminLogin()
         {
             InitializeComponent();
         }
