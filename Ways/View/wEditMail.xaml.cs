@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Mail;
+//using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Ways.Model;
 using Ways.ViewModel;
+using EASendMail; //Mailing
+using System.Security.Cryptography.X509Certificates;
 
 namespace Ways.View
 {
@@ -101,9 +103,21 @@ namespace Ways.View
 
         private void SendMail()
         {
+            string subject = "";
+            string textBody = "";
             switch (Message)
             {
                 case "ORIENTATION":
+                    subject = "Ways - Résultat de votre test d'orientation";
+                    textBody = "Bonjour, " + Candidate.Surname + "\n";
+                    textBody += "\n";
+                    textBody += "Vous trouverez ci-dessous le résultat de votre test d'orientation effectué à l'évènement Journée Portes Ouvertes du CESI." + "\n";
+                    textBody += "Nous vous souhaitons une bonne réception." + "\n";
+                    //affichage de la liste des métiers
+                    textBody += "Cordialement" + "\n";
+                    textBody += "\n";
+                    textBody += "Ways";
+                    /*
                     var fromAddress = new MailAddress("projetsways2018@gmail.com", "Ways");
                     var toAddress = new MailAddress(tbMail.Text, "To Name");
                     const string fromPassword = "cesi_ways";
@@ -127,9 +141,58 @@ namespace Ways.View
                     {
                         smtp.Send(message);
                     }
+                    */
                     break;
                 case "CONTACT":
+                    subject = "Ways - Invitation à l'évènement Journée Portes Ouvertes";
+                    textBody = "Bonjour," + "\n";
+                    textBody += "\n";
+                    textBody += Candidate.Surname + " vous invite à participer à l'évènement Journée Portes Ouvertes du CESI qui se déroule aujourd'hui." + "\n";
+                    textBody += "Cordialement" + "\n";
+                    textBody += "\n";
+                    textBody += "Ways";
                     break;
+            }
+
+            try
+            {
+                SmtpMail oMail = new SmtpMail("TryIt");
+
+                // Your gmail email address
+                oMail.From = vmStart.emailAdmin;
+                // Set recipient email address
+                oMail.To = tbMail.Text;
+
+                // Set email subject
+                oMail.Subject = subject;
+                // Set email body
+                oMail.TextBody = textBody;
+
+                // Gmail SMTP server address
+                SmtpServer oServer = new SmtpServer("smtp.gmail.com");
+
+                // Gmail user authentication
+                // For example: your email is "gmailid@gmail.com", then the user should be the same
+                oServer.User = vmStart.emailAdmin;
+                oServer.Password = "cesi_ways";
+
+                // Set 465 port
+                oServer.Port = 465;
+
+                // detect SSL/TLS automatically
+                oServer.ConnectType = SmtpConnectType.ConnectSSLAuto;
+
+                Console.WriteLine("start to send email over SSL ...");
+
+                SmtpClient oSmtp = new SmtpClient();
+                oSmtp.SendMail(oServer, oMail);
+
+                Console.WriteLine("email was sent successfully!");
+            }
+            catch (Exception ep)
+            {
+                Console.WriteLine("failed to send email with the following error:");
+                Console.WriteLine(ep.Message);
             }
         }
     }
