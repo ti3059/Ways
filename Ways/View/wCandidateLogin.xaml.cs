@@ -18,9 +18,9 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wLoginCandidate.xaml
     /// </summary>
-    public partial class wLoginCandidate : Window
+    public partial class wCandidateLogin : Window
     {
-        public wLoginCandidate()
+        public wCandidateLogin()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace Ways.View
             {
                 Model.Candidate candidate = new Model.Candidate(vmStart.lstjobs);
                 candidate.Surname = tbLogin.Text;
-                View.wTestMenu pg = new View.wTestMenu(candidate);
+                View.wCandidatMenu pg = new View.wCandidatMenu(candidate);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();

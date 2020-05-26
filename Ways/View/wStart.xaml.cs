@@ -38,7 +38,7 @@ namespace Ways
             }
             else
             {
-                View.wLoginCandidate pg = new View.wLoginCandidate();
+                View.wCandidateLogin pg = new View.wCandidateLogin();
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();

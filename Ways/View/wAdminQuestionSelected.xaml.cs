@@ -20,27 +20,27 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wAdminQuestion.xaml
     /// </summary>
-    public partial class wAdminQuestion : Window
+    public partial class wAdminQuestionSelected : Window
     {
         private string currentTest;
         Questions_Game questionGame;
         Questions_Orientation questionOrientation;
 
 
-        public wAdminQuestion(string msg)
+        public wAdminQuestionSelected(string msg)
         {
             InitializeComponent();
             currentTest = msg;
         }
 
-        public wAdminQuestion(string msg, Questions_Game currentQuestionGame) : this(msg)
+        public wAdminQuestionSelected(string msg, Questions_Game currentQuestionGame) : this(msg)
         {
             InitializeComponent();
             questionGame = currentQuestionGame;
             lQuestionSubject.Text = currentQuestionGame.Question;
         }
 
-        public wAdminQuestion(string msg, Questions_Orientation currentQuestionOrientation) : this(msg)
+        public wAdminQuestionSelected(string msg, Questions_Orientation currentQuestionOrientation) : this(msg)
         {
             InitializeComponent();
             questionOrientation = currentQuestionOrientation;
@@ -51,14 +51,14 @@ namespace Ways.View
 
         private void bEdition_Click(object sender, RoutedEventArgs e)
         {
-            View.wEditQuestion pg;
+            View.wAdminEditQuestion pg;
             if(currentTest == "GAME")
             {
-                pg = new View.wEditQuestion(currentTest, questionGame);
+                pg = new View.wAdminEditQuestion(currentTest, questionGame);
             }
             else
             {
-                pg = new View.wEditQuestion(currentTest, questionOrientation);
+                pg = new View.wAdminEditQuestion(currentTest, questionOrientation);
             }
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
@@ -77,7 +77,7 @@ namespace Ways.View
             }
             else
             {
-                View.wEditJobAnswer pg = new View.wEditJobAnswer(questionOrientation, currentTest);
+                View.wAdminEditRatingOrientation pg = new View.wAdminEditRatingOrientation(questionOrientation, currentTest);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
@@ -107,7 +107,7 @@ namespace Ways.View
                     }
                     MessageBox.Show("Question supprimée.", "My App");
                     //Mettre à jours la liste
-                    View.wAdmin pg = new View.wAdmin(currentTest);
+                    View.wAdminQuestionSelected pg = new View.wAdminQuestionSelected(currentTest);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
@@ -120,7 +120,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdmin pg = new View.wAdmin(currentTest);
+            View.wAdminCurrentTest pg = new View.wAdminCurrentTest(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

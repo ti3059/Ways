@@ -56,55 +56,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\wAdminQuestion.xaml">
+    <Page Include="View\wAdminQuestionSelected.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wInfoCandidate.xaml">
+    <Page Include="View\wCandidateInformations.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wLoginCandidate.xaml">
+    <Page Include="View\wCandidateLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wMailAdmin.xaml">
+    <Page Include="View\wEditMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wResultOrientationCandidate.xaml">
+    <Page Include="View\wCandidateResultOrientation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wScore.xaml">
+    <Page Include="View\wCandidateResultGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wTestMenu.xaml">
+    <Page Include="View\wCandidatMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wEditRightAnswer.xaml">
+    <Page Include="View\wAdminEditRatingGame.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wEditJobAnswer.xaml">
+    <Page Include="View\wAdminEditRatingOrientation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wEditQuestion.xaml">
+    <Page Include="View\wAdminEditQuestion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wQuestion.xaml">
+    <Page Include="View\wCandidateCurrentQuestion.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\wChoiceMenuAdmin.xaml">
+    <Page Include="View\wAdminMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\wAdmin.xaml">
+    <Page Include="View\wAdminCurrentTest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,44 +134,44 @@
     <Compile Include="ViewModel\vmGameAdmin.cs" />
     <Compile Include="ViewModel\vmLoginAdmin.cs" />
     <Compile Include="ViewModel\vmStart.cs" />
-    <Compile Include="View\wAdminQuestion.xaml.cs">
-      <DependentUpon>wAdminQuestion.xaml</DependentUpon>
+    <Compile Include="View\wAdminQuestionSelected.xaml.cs">
+      <DependentUpon>wAdminQuestionSelected.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wInfoCandidate.xaml.cs">
-      <DependentUpon>wInfoCandidate.xaml</DependentUpon>
+    <Compile Include="View\wCandidateInformations.xaml.cs">
+      <DependentUpon>wCandidateInformations.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wLoginCandidate.xaml.cs">
-      <DependentUpon>wLoginCandidate.xaml</DependentUpon>
+    <Compile Include="View\wCandidateLogin.xaml.cs">
+      <DependentUpon>wCandidateLogin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wMailAdmin.xaml.cs">
-      <DependentUpon>wMailAdmin.xaml</DependentUpon>
+    <Compile Include="View\wEditMail.xaml.cs">
+      <DependentUpon>wEditMail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wResultOrientationCandidate.xaml.cs">
-      <DependentUpon>wResultOrientationCandidate.xaml</DependentUpon>
+    <Compile Include="View\wCandidateResultOrientation.xaml.cs">
+      <DependentUpon>wCandidateResultOrientation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wScore.xaml.cs">
-      <DependentUpon>wScore.xaml</DependentUpon>
+    <Compile Include="View\wCandidateResultGame.xaml.cs">
+      <DependentUpon>wCandidateResultGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wTestMenu.xaml.cs">
-      <DependentUpon>wTestMenu.xaml</DependentUpon>
+    <Compile Include="View\wCandidatMenu.xaml.cs">
+      <DependentUpon>wCandidatMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wEditRightAnswer.xaml.cs">
-      <DependentUpon>wEditRightAnswer.xaml</DependentUpon>
+    <Compile Include="View\wAdminEditRatingGame.xaml.cs">
+      <DependentUpon>wAdminEditRatingGame.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wEditJobAnswer.xaml.cs">
-      <DependentUpon>wEditJobAnswer.xaml</DependentUpon>
+    <Compile Include="View\wAdminEditRatingOrientation.xaml.cs">
+      <DependentUpon>wAdminEditRatingOrientation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wEditQuestion.xaml.cs">
-      <DependentUpon>wEditQuestion.xaml</DependentUpon>
+    <Compile Include="View\wAdminEditQuestion.xaml.cs">
+      <DependentUpon>wAdminEditQuestion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wQuestion.xaml.cs">
-      <DependentUpon>wQuestion.xaml</DependentUpon>
+    <Compile Include="View\wCandidateCurrentQuestion.xaml.cs">
+      <DependentUpon>wCandidateCurrentQuestion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wChoiceMenuAdmin.xaml.cs">
-      <DependentUpon>wChoiceMenuAdmin.xaml</DependentUpon>
+    <Compile Include="View\wAdminMenu.xaml.cs">
+      <DependentUpon>wAdminMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\wAdmin.xaml.cs">
-      <DependentUpon>wAdmin.xaml</DependentUpon>
+    <Compile Include="View\wAdminCurrentTest.xaml.cs">
+      <DependentUpon>wAdminCurrentTest.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\wLoginAdmin.xaml.cs">
       <DependentUpon>wLoginAdmin.xaml</DependentUpon>

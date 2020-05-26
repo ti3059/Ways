@@ -19,10 +19,10 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wGameAdmin.xaml
     /// </summary>
-    public partial class wAdmin : Window
+    public partial class wAdminCurrentTest : Window
     {
         private string currentTest;
-        public wAdmin(string msg)
+        public wAdminCurrentTest(string msg)
         {
             InitializeComponent();
             currentTest = msg;
@@ -58,7 +58,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wChoiceMenuAdmin pg = new View.wChoiceMenuAdmin();
+            View.wAdminMenu pg = new View.wAdminMenu();
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -71,7 +71,7 @@ namespace Ways.View
                 if (currentTest == "GAME")
                 {
                     Questions_Game questionGameSelected = (Questions_Game)lvAdmin.SelectedItems[0];
-                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(currentTest, questionGameSelected);
+                    View.wAdminQuestionSelected pgAdminQuestion = new View.wAdminQuestionSelected(currentTest, questionGameSelected);
                     pgAdminQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pgAdminQuestion.Show();
                     this.Close();
@@ -79,7 +79,7 @@ namespace Ways.View
                 else
                 {
                     Questions_Orientation questionOrientationSelected = (Questions_Orientation)lvAdmin.SelectedItems[0];
-                    View.wAdminQuestion pgAdminQuestion = new View.wAdminQuestion(currentTest, questionOrientationSelected);
+                    View.wAdminQuestionSelected pgAdminQuestion = new View.wAdminQuestionSelected(currentTest, questionOrientationSelected);
                     pgAdminQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pgAdminQuestion.Show();
                     this.Close();
@@ -90,7 +90,7 @@ namespace Ways.View
         private void btnAddQuestion_Click(object sender, RoutedEventArgs e)
         {
             
-                View.wEditQuestion pgEditQuestion = new View.wEditQuestion(currentTest);
+                View.wAdminEditQuestion pgEditQuestion = new View.wAdminEditQuestion(currentTest);
                 pgEditQuestion.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pgEditQuestion.Show();
                 this.Close();

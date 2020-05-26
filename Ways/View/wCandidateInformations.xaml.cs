@@ -18,10 +18,10 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wInfoCandidate.xaml
     /// </summary>
-    public partial class wInfoCandidate : Window
+    public partial class wCandidateInformations : Window
     {
         private Candidate candidate;
-        public wInfoCandidate(Candidate c)
+        public wCandidateInformations(Candidate c)
         {
             InitializeComponent();
             candidate = c;
@@ -52,7 +52,7 @@ namespace Ways.View
 
                 candidate.SaveInfoInBase();
 
-                View.wTestMenu pg = new View.wTestMenu(candidate.Test_Game.Candidate);
+                View.wCandidatMenu pg = new View.wCandidatMenu(candidate.Test_Game.Candidate);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
@@ -61,7 +61,7 @@ namespace Ways.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wTestMenu pg = new View.wTestMenu(candidate);
+            View.wCandidatMenu pg = new View.wCandidatMenu(candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

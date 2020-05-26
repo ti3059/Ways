@@ -21,11 +21,11 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wMailAdmin.xaml
     /// </summary>
-    public partial class wMailAdmin : Window
+    public partial class wEditMail : Window
     {
         private string message;
         private Candidate candidate;
-        public wMailAdmin(string message)
+        public wEditMail(string message)
         {
             InitializeComponent();
             Message = message;
@@ -39,7 +39,7 @@ namespace Ways.View
             }
         }
 
-        public wMailAdmin(string message, Candidate currentCandidate)
+        public wEditMail(string message, Candidate currentCandidate)
         {
             InitializeComponent();
             Message = message;
@@ -53,7 +53,7 @@ namespace Ways.View
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wChoiceMenuAdmin pg = new View.wChoiceMenuAdmin();
+            View.wAdminMenu pg = new View.wAdminMenu();
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -71,21 +71,21 @@ namespace Ways.View
                 {
                     case "ADMIN":
                         AddEmailAdmin(tbMail.Text);
-                        View.wChoiceMenuAdmin pg = new View.wChoiceMenuAdmin();
+                        View.wAdminMenu pg = new View.wAdminMenu();
                         pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg.Show();
                         this.Close();
                         break;
                     case "TESTORIENTATION":
                         //SendMail();
-                        View.wResultOrientationCandidate pg2 = new View.wResultOrientationCandidate(Candidate);
+                        View.wCandidateResultOrientation pg2 = new View.wCandidateResultOrientation(Candidate);
                         pg2.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg2.Show();
                         this.Close();
                         break;
                     case "CONTACT":
                         //SendMail();
-                        View.wScore pg3 = new View.wScore(Candidate);
+                        View.wCandidateResultGame pg3 = new View.wCandidateResultGame(Candidate);
                         pg3.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg3.Show();
                         this.Close();
@@ -127,7 +127,6 @@ namespace Ways.View
                     {
                         smtp.Send(message);
                     }
-                    break;
                     break;
                 case "CONTACT":
                     break;

@@ -18,7 +18,7 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wQuestion.xaml
     /// </summary>
-    public partial class wQuestion : Window
+    public partial class wCandidateCurrentQuestion : Window
     {
         private string currentTest;
         private Answer_Orientation answerOrientationSelected;
@@ -26,12 +26,12 @@ namespace Ways.View
         private Candidate candidate;
 
 
-        public wQuestion()
+        public wCandidateCurrentQuestion()
         {
             InitializeComponent();
         }
 
-        public wQuestion(Candidate currentCandidate, string msg) : this()
+        public wCandidateCurrentQuestion(Candidate currentCandidate, string msg) : this()
         {
             CurrentTest = msg;
             Candidate = currentCandidate;
@@ -51,14 +51,14 @@ namespace Ways.View
                 if(candidate.Test_Orientation.CurrentQuestion == null)
                 {
                     MessageBox.Show("Fin des questions");
-                    View.wTestMenu pg = new View.wTestMenu(candidate);
+                    View.wCandidatMenu pg = new View.wCandidatMenu(candidate);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
                 }
                 else
                 {
-                    View.wQuestion pg = new View.wQuestion(candidate, currentTest);
+                    View.wCandidateCurrentQuestion pg = new View.wCandidateCurrentQuestion(candidate, currentTest);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
@@ -70,14 +70,14 @@ namespace Ways.View
                 if (candidate.Test_Game.CurrentQuestion == null)
                 {
                     MessageBox.Show("Fin des questions");
-                    View.wInfoCandidate pg = new View.wInfoCandidate(candidate.Test_Game.Candidate);
+                    View.wCandidateInformations pg = new View.wCandidateInformations(candidate.Test_Game.Candidate);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();
                 }
                 else
                 {
-                    View.wQuestion pg = new View.wQuestion(candidate, currentTest);
+                    View.wCandidateCurrentQuestion pg = new View.wCandidateCurrentQuestion(candidate, currentTest);
                     pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                     pg.Show();
                     this.Close();

@@ -20,10 +20,10 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wScore.xaml
     /// </summary>
-    public partial class wScore : Window
+    public partial class wCandidateResultGame : Window
     {
         private Candidate candidate;
-        public wScore(Candidate currentCandidate)
+        public wCandidateResultGame(Candidate currentCandidate)
         {
             InitializeComponent();
             Candidate = currentCandidate;
@@ -45,7 +45,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wTestMenu pg = new View.wTestMenu(candidate);
+            View.wCandidatMenu pg = new View.wCandidatMenu(candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -53,7 +53,7 @@ namespace Ways.View
 
         private void btnForm_Click(object sender, RoutedEventArgs e)
         {
-            View.wMailAdmin pg = new View.wMailAdmin("CONTACT", Candidate);
+            View.wEditMail pg = new View.wEditMail("CONTACT", Candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

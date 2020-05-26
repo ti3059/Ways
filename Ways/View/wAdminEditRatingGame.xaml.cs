@@ -52,7 +52,7 @@ namespace Ways.View
             {
                 MessageBox.Show("Erreur lors de la modification de la question");   
             }
-            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
+            View.wAdminQuestionSelected pg = new View.wAdminQuestionSelected(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -75,7 +75,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest);
+            View.wAdminQuestionSelected pg = new View.wAdminQuestionSelected(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

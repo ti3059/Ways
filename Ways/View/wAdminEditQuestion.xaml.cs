@@ -21,7 +21,7 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wEditQuestion.xaml
     /// </summary>
-    public partial class wEditQuestion : Window
+    public partial class wAdminEditQuestion : Window
     {
         private string currentTest;
         Questions_Game questionGame;
@@ -29,13 +29,13 @@ namespace Ways.View
         Questions_Orientation questionOrientation;
         List<Answer_Orientation> listAnswerOrientation;
 
-        public wEditQuestion(string msg)
+        public wAdminEditQuestion(string msg)
         {
             InitializeComponent();
             currentTest = msg;
         }
 
-        public wEditQuestion(string msg, Questions_Game currentQuestionGame)
+        public wAdminEditQuestion(string msg, Questions_Game currentQuestionGame)
         {
             InitializeComponent();
             questionGame = currentQuestionGame;
@@ -45,7 +45,7 @@ namespace Ways.View
             tbQuestion.Text = currentQuestionGame.Question;
         }
 
-        public wEditQuestion(string msg, Questions_Orientation q)
+        public wAdminEditQuestion(string msg, Questions_Orientation q)
         {
             InitializeComponent();
             questionOrientation = q;
@@ -58,7 +58,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdmin pg = new View.wAdmin(currentTest);
+            View.wAdminCurrentTest pg = new View.wAdminCurrentTest(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -147,7 +147,7 @@ namespace Ways.View
                     }
                 }
             }
-            wAdmin pg = new wAdmin(currentTest);
+            wAdminCurrentTest pg = new wAdminCurrentTest(currentTest);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

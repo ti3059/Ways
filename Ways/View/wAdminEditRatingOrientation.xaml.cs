@@ -19,13 +19,13 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wEditJobAnswer .xaml
     /// </summary>
-    public partial class wEditJobAnswer : Window
+    public partial class wAdminEditRatingOrientation : Window
     {
         private Questions_Orientation questionSelected;
         private List<Answer_Orientation> lstAnswer = new List<Answer_Orientation>();
         private string currentTest;
 
-        public wEditJobAnswer(Questions_Orientation question, string msg)
+        public wAdminEditRatingOrientation(Questions_Orientation question, string msg)
         {
             InitializeComponent();
             questionSelected = question;
@@ -35,7 +35,7 @@ namespace Ways.View
             setAnswers();
         }
 
-        public wEditJobAnswer()
+        public wAdminEditRatingOrientation()
         {
             InitializeComponent();
         }
@@ -47,7 +47,7 @@ namespace Ways.View
             newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[1].Id, cbAnswerJobTwo.SelectedIndex);
             newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[2].Id, cbAnswerJobThree.SelectedIndex);
             newAnswerOrientation.EditJobAnswerOrientation(lstAnswer[3].Id, cbAnswerJobFour.SelectedIndex);
-            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
+            View.wAdminQuestionSelected pg = new View.wAdminQuestionSelected(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -55,7 +55,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wAdminQuestion pg = new View.wAdminQuestion(currentTest, questionSelected);
+            View.wAdminQuestionSelected pg = new View.wAdminQuestionSelected(currentTest, questionSelected);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

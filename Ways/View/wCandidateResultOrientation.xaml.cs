@@ -22,17 +22,17 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wResultOrientationCandidate.xaml
     /// </summary>
-    public partial class wResultOrientationCandidate : Window
+    public partial class wCandidateResultOrientation : Window
     {
         private Candidate candidate;
-        public wResultOrientationCandidate(Candidate currentCandidate)
+        public wCandidateResultOrientation(Candidate currentCandidate)
         {
             InitializeComponent();
             Candidate = currentCandidate;
             SetJobs();
         }
 
-        public wResultOrientationCandidate()
+        public wCandidateResultOrientation()
         {
             InitializeComponent();
         }
@@ -86,7 +86,7 @@ namespace Ways.View
 
         private void bBack_Click(object sender, RoutedEventArgs e)
         {
-            View.wTestMenu pg = new View.wTestMenu(candidate);
+            View.wCandidatMenu pg = new View.wCandidatMenu(candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -97,7 +97,7 @@ namespace Ways.View
             //Pointe vers la page adminEmail
             //Param du construc checker si admin ou candidat 
             //Si candidat 
-            View.wMailAdmin pg = new View.wMailAdmin("TESTORIENTATION", Candidate);
+            View.wEditMail pg = new View.wEditMail("TESTORIENTATION", Candidate);
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

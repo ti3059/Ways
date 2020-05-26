@@ -17,16 +17,16 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wChoiceMenuAdmin.xaml
     /// </summary>
-    public partial class wChoiceMenuAdmin : Window
+    public partial class wAdminMenu : Window
     {
-        public wChoiceMenuAdmin()
+        public wAdminMenu()
         {
             InitializeComponent();
         }
 
         private void btnGameManage_Click(object sender, RoutedEventArgs e)
         {
-            wAdmin pg = new wAdmin("GAME");
+            wAdminCurrentTest pg = new wAdminCurrentTest("GAME");
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -34,7 +34,7 @@ namespace Ways.View
 
         private void btnOrientationManage_Click(object sender, RoutedEventArgs e)
         {
-            wAdmin pg = new wAdmin("ORIENTATION");
+            wAdminCurrentTest pg = new wAdminCurrentTest("ORIENTATION");
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();
@@ -50,7 +50,7 @@ namespace Ways.View
 
         private void btnModifyMailAdmin_Click(object sender, RoutedEventArgs e)
         {
-            View.wMailAdmin pg = new View.wMailAdmin("ADMIN");
+            View.wEditMail pg = new View.wEditMail("ADMIN");
             pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pg.Show();
             this.Close();

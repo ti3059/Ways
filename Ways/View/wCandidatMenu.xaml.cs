@@ -18,11 +18,11 @@ namespace Ways.View
     /// <summary>
     /// Logique d'interaction pour wAtestMenu.xaml
     /// </summary>
-    public partial class wTestMenu : Window
+    public partial class wCandidatMenu : Window
     {
         private Candidate candidate;
 
-        public wTestMenu(Candidate currentCandidate)
+        public wCandidatMenu(Candidate currentCandidate)
         {
             InitializeComponent();
             candidate = currentCandidate;
@@ -37,14 +37,14 @@ namespace Ways.View
                 {
                     if (candidate.Info)
                     {
-                        View.wScore pg = new View.wScore(candidate);
+                        View.wCandidateResultGame pg = new View.wCandidateResultGame(candidate);
                         pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg.Show();
                         this.Close();
                     }
                     else
                     {
-                        View.wInfoCandidate pg = new View.wInfoCandidate(candidate);
+                        View.wCandidateInformations pg = new View.wCandidateInformations(candidate);
                         pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                         pg.Show();
                         this.Close();
@@ -58,7 +58,7 @@ namespace Ways.View
             }
             else
             {
-                View.wQuestion pg = new View.wQuestion(candidate, "GAME");
+                View.wCandidateCurrentQuestion pg = new View.wCandidateCurrentQuestion(candidate, "GAME");
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
@@ -69,14 +69,14 @@ namespace Ways.View
         {
             if(candidate.Test_Orientation.CurrentQuestion == null)
             {
-                View.wResultOrientationCandidate pg = new View.wResultOrientationCandidate(candidate);
+                View.wCandidateResultOrientation pg = new View.wCandidateResultOrientation(candidate);
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
             }
             else
             {
-                View.wQuestion pg = new View.wQuestion(candidate, "ORIENTATION");
+                View.wCandidateCurrentQuestion pg = new View.wCandidateCurrentQuestion(candidate, "ORIENTATION");
                 pg.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
                 pg.Show();
                 this.Close();
