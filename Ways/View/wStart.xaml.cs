@@ -48,7 +48,7 @@ namespace Ways
 
         private void btnAdministrateur_Click(object sender, RoutedEventArgs e)
         {
-            View.wLoginAdmin pgLoginAdmin = new View.wLoginAdmin();
+            View.wAdminLogin pgLoginAdmin = new View.wAdminLogin();
             pgLoginAdmin.WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             pgLoginAdmin.Show();
             this.Close();
